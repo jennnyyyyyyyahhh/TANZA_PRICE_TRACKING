@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#4a8c33">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Tanza">
+    <title>Vendor Dashboard - Tanza Public Market</title>
+    <link rel="stylesheet" href="../CSS/minimalist-responsive.css">
+    <link rel="stylesheet" href="../CSS/vendor-dashboard.css">
+    <link rel="stylesheet" href="../CSS/survey-form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../JS/disable-console-logs.js"></script>
+    <script src="../JS/disable-all-notifications.js"></script>
+    <script src="../JS/disable-login-requirements.js"></script>
+    <!-- Shared JS for all pages -->
+    <script src="../JS/vendor-dashboard-shared.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Left Side -->
+                <div class="logo">
+                    <a href="pricefront.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-seedling"></i>
+                        <span>Tanza Public Market</span>
+                    </a>
+                </div>
+                
+                <!-- Navigation Center -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="landingtrial.html" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#weather" class="nav-link">WEATHER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#about" class="nav-link">ABOUT</a>
+                    </li>
+                </ul>
+                
+                <!-- Right Side Actions -->
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">5</span>
+                        <!-- Notification Dropdown -->
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Market Price Alerts</h4>
+                                <span class="mark-read" id="markAllRead">Mark all as read</span>
+                            </div>
+                            <div id="cleaningNotifications">
+                                <!-- Cleaning request notifications will be inserted here -->
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Fresh Tomatoes - Tanza Market</strong></p>
+                                    <small>Now ₱65/kg (was ₱85/kg) - Save 24% at Local Farm</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Local Rice - Farmer's Direct</strong></p>
+                                    <small>Now ₱48/kg (was ₱55/kg) - Save 13% from Laguna Farms</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-bell price-alert"></i>
+                                <div class="notification-content">
+                                    <p><strong>Organic Apples - Limited Stock</strong></p>
+                                    <small>₱95/kg - Only 10kg left at Public Market</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Ripe Bananas - Morning Harvest</strong></p>
+                                    <small>Now ₱35/kg (was ₱45/kg) - Fresh from Batangas Farms</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Carrots - Bulk Discount</strong></p>
+                                    <small>Now ₱50/kg (was ₱65/kg) - Highland Vegetables</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- User Account Button -->
+                    <div class="user-account-container" id="headerAccountContainer">
+                        <a href="edit-profile.html" class="btn-user-account" id="headerAccountBtn">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="headerUserName">Vendor</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="toggle-sidebar" id="toggleSidebar" aria-label="Toggle sidebar menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            
+            <!-- Navigation Links -->
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item dashboard-link">
+                        <a href="dashboard.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>DASHBOARD</span>
+                        </a>
+                    </li>
+                    <!-- BUSINESS PERMIT REMOVED FROM HERE AND MOVED TO EDIT PROFILE -->
+                    <li class="nav-item events-link">
+                        <a href="events.html" class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>EVENTS</span>
+                        </a>
+                    </li>
+                    <li class="nav-item notices-link">
+                        <a href="notices.html" class="nav-link">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>NOTICES</span>
+                        </a>
+                    </li>
+                    <li class="nav-item survey-form-link">
+                        <a href="survey-form.html" class="nav-link">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>SUBMIT PRICE SURVEY</span>
+                        </a>
+                    </li>
+                    <li class="nav-item cleaning-link">
+                        <a href="cleaning.html" class="nav-link">
+                            <i class="fas fa-broom"></i>
+                            <span>REQUEST CLEANING</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Logout at the bottom -->
+            <div class="sidebar-footer">
+                <a href="#" id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>LOG OUT</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <header class="top-navbar">
+                <div class="date-time">
+                    <span id="currentDate"></span>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-wrapper">
+                <div class="section-header">
+                        <h2><i class="fas fa-certificate"></i> Business Permit Verification</h2>
+                        <p>Upload your business permit for account verification.</p>
+                    </div>
+                    <div class="section-content">
+                        <div class="business-permit-container">
+                            <!-- Current Status Card -->
+                            <div class="permit-status-card">
+                                <h3>Current Verification Status</h3>
+                                <div class="status-display" id="permitStatusDisplay">
+                                    <div class="status-icon pending">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="status-info">
+                                        <h4 id="permitStatusTitle">Pending Verification</h4>
+                                        <p id="permitStatusMessage">No business permit uploaded yet. Please upload your permit to get verified.</p>
+                                        <span class="status-badge pending" id="permitStatusBadge">Not Verified</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Upload Form -->
+                            <div class="permit-upload-card" id="permitUploadCard">
+                                <h3>Upload Business Permit</h3>
+                                <form class="permit-upload-form" id="businessPermitForm">
+                                    <div class="upload-area" id="uploadArea">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-cloud-upload-alt" style="font-size: 48px; color: #27ae60; margin-bottom: 15px;"></i>
+                                            <h4>Drag & Drop or Click to Upload</h4>
+                                            <p>Upload your business permit (PDF, JPG, PNG - Max 5MB)</p>
+                                            <input type="file" id="businessPermitFile" name="businessPermit" accept="image/*,.pdf" style="display: none;">
+                                            <button type="button" class="btn-upload" onclick="document.getElementById('businessPermitFile').click()">
+                                                <i class="fas fa-folder-open"></i> Choose File
+                                            </button>
+                                        </div>
+                                        <div class="file-preview" id="filePreview" style="display: none;">
+                                            <i class="fas fa-file-alt" style="font-size: 36px; color: #27ae60;"></i>
+                                            <p id="fileName"></p>
+                                            <p id="fileSize" style="font-size: 0.85rem; color: #666;"></p>
+                                            <button type="button" class="btn-remove" id="removeFile">
+                                                <i class="fas fa-times"></i> Remove
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="permitNumber">Business Permit Number</label>
+                                        <input type="text" id="permitNumber" name="permitNumber" class="form-input" placeholder="Enter your permit number" required>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="permitIssueDate">Issue Date</label>
+                                            <input type="date" id="permitIssueDate" name="issueDate" class="form-input" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="permitExpiryDate">Expiry Date</label>
+                                            <input type="date" id="permitExpiryDate" name="expiryDate" class="form-input" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="businessName">Business Name</label>
+                                        <input type="text" id="businessName" name="businessName" class="form-input" placeholder="Enter your business name" required>
+                                    </div>
+                                    
+                                    <div class="form-actions">
+                                        <button type="button" class="btn-secondary" id="cancelPermitUpload">Cancel</button>
+                                        <button type="submit" class="btn-primary" id="submitPermit">
+                                            <i class="fas fa-paper-plane"></i> Submit for Verification
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Uploaded Permit Display -->
+                            <div class="permit-display-card" id="permitDisplayCard" style="display: none;">
+                                <h3>Uploaded Business Permit</h3>
+                                <div class="permit-details">
+                                    <div class="permit-image-container" id="permitImageContainer">
+                                        <!-- Uploaded permit will be displayed here -->
+                                    </div>
+                                    <div class="permit-info">
+                                        <div class="info-row">
+                                            <strong>Permit Number:</strong>
+                                            <span id="displayPermitNumber">-</span>
+                                        </div>
+                                        <div class="info-row">
+                                            <strong>Business Name:</strong>
+                                            <span id="displayBusinessName">-</span>
+                                        </div>
+                                        <div class="info-row">
+                                            <strong>Issue Date:</strong>
+                                            <span id="displayIssueDate">-</span>
+                                        </div>
+                                        <div class="info-row">
+                                            <strong>Expiry Date:</strong>
+                                            <span id="displayExpiryDate">-</span>
+                                        </div>
+                                        <div class="info-row">
+                                            <strong>Uploaded On:</strong>
+                                            <span id="displayUploadDate">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-secondary" id="updatePermit">
+                                    <i class="fas fa-edit"></i> Update Permit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </main>
+    </div>
+    
+    <!-- *** PAGE SPECIFIC SCRIPTS GO HERE (if any) *** -->
+    
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit a Report</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .modal {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 420px;
+      overflow: hidden;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      color: white;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .modal-content {
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .file-upload {
+      border: 2px dashed #ccc;
+      border-radius: 6px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .submit-btn {
+      background: #27ae60;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #219150;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<!-- ...existing code... -->
+<body>
+
+  <!-- Header Start -->
+  <header style="width:100%;background:#27ae60;padding:15px 0 10px 0;box-shadow:0 2px 8px rgba(0,0,0,0.07);position:fixed;top:0;left:0;z-index:10;">
+    <div style="max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;">
+      <div style="font-size:22px;font-weight:700;color:#fff;letter-spacing:1px;">
+        Tanza Public Market
+      </div>
+      <nav>
+        <a href="landingtrial.html" style="color:#fff;text-decoration:none;margin-right:18px;font-size:15px;">Home</a>
+        <a href="pricefront.html" style="color:#fff;text-decoration:none;margin-right:18px;font-size:15px;">Market Prices</a>
+        <a href="report-overpricing.html" style="color:#fff;text-decoration:none;font-size:15px;">Report</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Header End -->
+
+  <div style="height:70px"></div> <!-- Spacer for fixed header -->
+
+  <div class="modal">
+    <!-- ...existing code... -->
+  <div class="modal">
+    <div class="modal-header">
+      Submit a Report
+      <button onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-content">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your full name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email address">
+      </div>
+
+      <div class="form-group">
+        <label for="category">Report Category</label>
+        <select id="category">
+          <option value="" disabled selected>Select a category</option>
+          <option value="price_issue">Price Issue</option>
+          <option value="vendor_complaint">Vendor Complaint</option>
+          <option value="product_quality">Product Quality</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Report Description</label>
+        <textarea id="description" placeholder="Describe the issue or concern you want to report..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Attach Image (Optional)</label>
+        <div class="file-upload" onclick="document.getElementById('fileInput').click()">
+          📎 Click to upload or drag and drop<br>
+          <small>PNG, JPG, JPEG up to 5MB</small>
+          <input type="file" id="fileInput" style="display: none;">
+        </div>
+      </div>
+
+      <button class="submit-btn">Submit Report</button>
+    </div>
+  </div>
+
+<script>
+  function closeModal() {
+    alert("You clicked close — you can hide the modal here.");
+  }
+</script>
+
+</body>
+</html>

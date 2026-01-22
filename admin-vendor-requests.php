@@ -1,0 +1,410 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Requests - Tanza Public Market</title>
+    <!-- <link rel="stylesheet" href="../CSS/minimalist-responsive.css"> -->
+    <link rel="stylesheet" href="../CSS/admin-dashboard.css">
+    <!-- <link rel="stylesheet" href="../CSS/admin-dashboard-responsive.css"> -->
+    <link rel="stylesheet" href="../CSS/notification-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../JS/disable-console-logs.js"></script>
+    <script src="../JS/disable-all-notifications.js"></script>
+    <script src="../JS/disable-login-requirements.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                
+                <div class="logo">
+                    <a href="pricefront.php" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-seedling"></i>
+                        <span class="logo-text">Tanza Public Market</span>
+                    </a>
+                </div>
+               <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="index.php" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pricefront.php"  style="color: white; text-decoration: none;">PRICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.php#weather" class="nav-link">WEATHER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.php#about" class="nav-link">ABOUT</a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">5</span>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Market Price Alerts</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Fresh Tomatoes</strong></p>
+                                    <small>Now ₱65/kg (was ₱85/kg)</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-account-container" id="headerAccountContainer">
+                        <a href="#profile" class="btn-user-account" id="adminAccountBtn">
+                            <i class="fas fa-user-shield"></i>
+                            <span id="headerUserName">Admin</span>
+                        </a>
+                        <div class="account-dropdown" id="accountDropdown">
+                            <div class="account-dropdown-header">
+                                <div class="account-avatar"><i class="fas fa-user-shield"></i></div>
+                                <div class="account-user-info">
+                                    <h3>Admin User</h3>
+                                    <p>admin@farmfreshmarket.com</p>
+                                    <span class="user-type">Administrator</span>
+                                </div>
+                            </div>
+                            <div class="account-menu">
+                                <a href="#" class="account-menu-item" data-action="profile"><i class="fas fa-user-shield"></i><span>ADMIN PROFILE</span></a>
+                                <a href="#" class="account-menu-item" data-action="settings"><i class="fas fa-cog"></i><span>SYSTEM SETTINGS</span></a>
+                                <a href="#" class="account-menu-item logout" data-action="logout"><i class="fas fa-sign-out-alt"></i><span>LOGOUT</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle sidebar menu">
+        <i class="fas fa-bars"></i>
+        <span>Menu</span>
+    </button>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <!-- <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Admin Panel</span>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div> -->
+            <nav class="sidebar-nav">
+                                <ul class="nav-list">
+                    <li class="nav-item"><a href="admin-dashboard.php" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>DASHBOARD</span></a></li>
+                    <li class="nav-item"><a href="admin-vendor-management.php" class="nav-link"><i class="fas fa-users"></i><span>VENDOR MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-survey-form.php" class="nav-link"><i class="fas fa-clipboard-list"></i><span>SUBMIT SURVEY FORM</span></a></li>
+                    <li class="nav-item"><a href="admin-report-management.php" class="nav-link"><i class="fas fa-exclamation-triangle"></i><span>REPORT MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-cleaning-management.php" class="nav-link"><i class="fas fa-broom"></i><span>CLEANING MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-vendor-requests.php" class="nav-link"><i class="fas fa-file-alt"></i><span>VENDOR REQUESTS</span></a></li>
+                    <li class="nav-item"><a href="admin-stall-management.php" class="nav-link"><i class="fas fa-store"></i><span>STALL MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-business-permit.php" class="nav-link"><i class="fas fa-certificate"></i><span>BUSINESS PERMIT</span></a></li>
+                    <li class="nav-item"><a href="admin-events.php" class="nav-link"><i class="fas fa-calendar-alt"></i><span>EVENTS</span></a></li>
+                    <li class="nav-item"><a href="admin-notices.php" class="nav-link"><i class="fas fa-bullhorn"></i><span>NOTICES</span></a></li>
+                    <li class="nav-item"><a href="admin-notification-management.html" class="nav-link"><i class="fas fa-bell"></i><span>NOTIFICATION MANAGEMENT</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>LOG OUT</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-navbar">
+                <div class="top-nav-left">
+                    <button class="mobile-sidebar-trigger" id="mobileSidebarTrigger" aria-label="Open sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Vendor Requests</h1>
+                </div>
+                <div class="date-time">
+                    <span id="currentDate">October 23, 2025</span>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <section class="content-section active" id="vendor-requests-section">
+                    <div class="section-header">
+                        <h2>Vendor Requests</h2>
+                        <p>View and process vendor applications and requests.</p>
+                    </div>
+                    <div class="section-content">
+                        <div class="vendor-requests-controls">
+                            <div class="filter-options">
+                                <select id="requestStatusFilter">
+                                    <option value="all">All Requests</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="approved">Approved</option>
+                                    <option value="declined">Declined</option>
+                                </select>
+                            </div>
+                            <div class="request-actions-global">
+                                <button id="refreshVendorRequests" class="btn-sm btn-primary"><i class="fas fa-sync-alt"></i> Refresh List</button>
+                                <button class="btn-sm btn-secondary"><i class="fas fa-file-export"></i> Export List</button>
+                            </div>
+                        </div>
+
+                        <div class="request-list-container">
+                            <div id="no-vendor-requests" style="display: none; text-align: center; padding: 40px 20px;">
+                                <i class="fas fa-user-plus" style="font-size: 48px; color: #ccc; margin-bottom: 20px;"></i>
+                                <h3>No Vendor Requests Found</h3>
+                                <p>There are currently no vendor registration requests to process.</p>
+                            </div>
+                            
+                            <table class="request-table" id="vendor-requests-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Date</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="vendor-requests-tbody">
+                                    <!-- Dynamic content will load here -->
+                                    <tr id="sample-row" style="display: none;">
+                                        <td>VND123</td>
+                                        <td>Oct 10, 2025</td>
+                                        <td>Roberto Martinez</td>
+                                        <td>roberto@example.com</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon view-btn" title="View Details" data-id="VND123"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon approve-btn" title="Approve" data-id="VND123"><i class="fas fa-check"></i></button>
+                                            <button class="btn-icon decline-btn" title="Decline" data-id="VND123"><i class="fas fa-times"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Modal for vendor details -->
+                        <div id="vendor-detail-modal" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3>Vendor Request Details</h3>
+                                    <span class="modal-close">&times;</span>
+                                </div>
+                                <div class="modal-body" id="vendor-detail-content">
+                                    <!-- Content will be populated dynamically -->
+                                    <div class="vendor-detail-grid">
+                                        <div class="vendor-detail-field">
+                                            <label>Registration Date</label>
+                                            <div class="value" id="detail-registration-date">Oct 9, 2025</div>
+                                        </div>
+                                        <div class="vendor-detail-field">
+                                            <label>Status</label>
+                                            <div class="value" id="detail-status"><span class="status-badge pending">Pending</span></div>
+                                        </div>
+                                        <div class="vendor-detail-field">
+                                            <label>First Name</label>
+                                            <div class="value" id="detail-first-name">-</div>
+                                        </div>
+                                        <div class="vendor-detail-field">
+                                            <label>Last Name</label>
+                                            <div class="value" id="detail-last-name">-</div>
+                                        </div>
+                                        <div class="vendor-detail-field">
+                                            <label>Email</label>
+                                            <div class="value" id="detail-email">-</div>
+                                        </div>
+                                        <div class="vendor-detail-field">
+                                            <label>Business Name</label>
+                                            <div class="value" id="detail-business-name">-</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary modal-close">Close</button>
+                                    <button class="btn btn-success" id="modal-approve-btn">Approve Vendor</button>
+                                    <button class="btn btn-danger" id="modal-decline-btn">Decline Vendor</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Modal styles -->
+                        <style>
+                            .modal {
+                                display: none;
+                                position: fixed;
+                                z-index: 1050;
+                                left: 0;
+                                top: 0;
+                                width: 100%;
+                                height: 100%;
+                                overflow: auto;
+                                background-color: rgba(0,0,0,0.5);
+                            }
+                            .modal-content {
+                                background-color: #fefefe;
+                                margin: 50px auto;
+                                padding: 0;
+                                border: 1px solid #ddd;
+                                border-radius: 6px;
+                                width: 80%;
+                                max-width: 800px;
+                                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                                animation: modalOpen 0.3s ease;
+                            }
+                            @keyframes modalOpen {
+                                from {opacity: 0; transform: translateY(-20px);}
+                                to {opacity: 1; transform: translateY(0);}
+                            }
+                            .modal-header {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding: 15px 20px;
+                                background-color: #f8f9fa;
+                                border-bottom: 1px solid #e9ecef;
+                                border-top-left-radius: 6px;
+                                border-top-right-radius: 6px;
+                            }
+                            .modal-header h3 {
+                                margin: 0;
+                                color: #333;
+                            }
+                            .modal-close {
+                                color: #aaa;
+                                font-size: 24px;
+                                font-weight: bold;
+                                cursor: pointer;
+                            }
+                            .modal-close:hover {
+                                color: #555;
+                            }
+                            .modal-body {
+                                padding: 20px;
+                                max-height: 60vh;
+                                overflow-y: auto;
+                            }
+                            .modal-footer {
+                                padding: 15px 20px;
+                                background-color: #f8f9fa;
+                                border-top: 1px solid #e9ecef;
+                                display: flex;
+                                justify-content: flex-end;
+                                gap: 10px;
+                            }
+                            
+                            .vendor-detail-grid {
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                gap: 15px;
+                            }
+                            .vendor-detail-field {
+                                margin-bottom: 15px;
+                            }
+                            .vendor-detail-field label {
+                                display: block;
+                                font-weight: bold;
+                                color: #555;
+                                margin-bottom: 5px;
+                            }
+                            .vendor-detail-field .value {
+                                padding: 8px 12px;
+                                background-color: #f8f9fa;
+                                border: 1px solid #e9ecef;
+                                border-radius: 4px;
+                                color: #333;
+                            }
+                        </style>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Floating Sidebar Toggle Button (Mobile Only) -->
+    <button class="floating-sidebar-btn" id="floatingSidebarBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Mobile View CSS -->
+    <link rel="stylesheet" href="CSS/admin-mobile-view.css">
+
+    <!-- Floating Button & Modal Fix Styles -->
+    <style>
+        /* Floating sidebar button - hidden on desktop */
+        .floating-sidebar-btn {
+            display: none;
+        }
+        
+        /* Show floating button on mobile/tablet */
+        @media (max-width: 992px) {
+            .floating-sidebar-btn {
+                display: flex !important;
+                position: fixed !important;
+                bottom: 25px !important;
+                right: 20px !important;
+                z-index: 99999 !important;
+                width: 56px !important;
+                height: 56px !important;
+                background: linear-gradient(135deg, #4a8c33 0%, #3d7429 100%) !important;
+                color: white !important;
+                border: none !important;
+                border-radius: 50% !important;
+                cursor: pointer !important;
+                align-items: center !important;
+                justify-content: center !important;
+                box-shadow: 0 4px 15px rgba(74, 140, 51, 0.4), 
+                            0 2px 6px rgba(0, 0, 0, 0.2) !important;
+            }
+            
+            .floating-sidebar-btn i {
+                font-size: 1.4rem !important;
+                color: white !important;
+            }
+        }
+        
+        .modal:not(.show),
+        div.modal:not(.show),
+        div.modal.fade:not(.show) {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            z-index: -9999 !important;
+            position: fixed !important;
+            left: -99999px !important;
+            top: -99999px !important;
+            width: 0 !important;
+            height: 0 !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+        }
+        .modal:not(.show) *,
+        div.modal:not(.show) *,
+        div.modal.fade:not(.show) * {
+            pointer-events: none !important;
+            display: none !important;
+        }
+        .modal-backdrop:not(.show) {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            z-index: -9999 !important;
+        }
+    </style>
+
+    <script src="../JS/admin-sidebar.js"></script>
+    <script src="../JS/admin-dashboard.js"></script>
+</body>
+</html>

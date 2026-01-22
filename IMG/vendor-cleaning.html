@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#4a8c33">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Tanza">
+    <title>Request Cleaning - Tanza Public Market</title>
+    <link rel="stylesheet" href="../CSS/minimalist-responsive.css">
+    <link rel="stylesheet" href="../CSS/vendor-dashboard.css">
+    <link rel="stylesheet" href="../CSS/survey-form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../JS/disable-console-logs.js"></script>
+    <script src="../JS/disable-all-notifications.js"></script>
+    <script src="../JS/disable-login-requirements.js"></script>
+    <!-- Shared JS for all pages -->
+    <script src="../JS/vendor-dashboard-shared.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Left Side -->
+                <div class="logo">
+                    <a href="pricefront.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-seedling"></i>
+                        <span>Tanza Public Market</span>
+                    </a>
+                </div>
+                
+                <!-- Navigation Center -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="landingtrial.html" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#weather" class="nav-link">WEATHER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#about" class="nav-link">ABOUT</a>
+                    </li>
+                </ul>
+                
+                <!-- Right Side Actions -->
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">5</span>
+                        <!-- Notification Dropdown -->
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Market Price Alerts</h4>
+                                <span class="mark-read" id="markAllRead">Mark all as read</span>
+                            </div>
+                            <div id="cleaningNotifications">
+                                <!-- Cleaning request notifications will be inserted here -->
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Fresh Tomatoes - Tanza Market</strong></p>
+                                    <small>Now ₱65/kg (was ₱85/kg) - Save 24% at Local Farm</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Local Rice - Farmer's Direct</strong></p>
+                                    <small>Now ₱48/kg (was ₱55/kg) - Save 13% from Laguna Farms</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-bell price-alert"></i>
+                                <div class="notification-content">
+                                    <p><strong>Organic Apples - Limited Stock</strong></p>
+                                    <small>₱95/kg - Only 10kg left at Public Market</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Ripe Bananas - Morning Harvest</strong></p>
+                                    <small>Now ₱35/kg (was ₱45/kg) - Fresh from Batangas Farms</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Carrots - Bulk Discount</strong></p>
+                                    <small>Now ₱50/kg (was ₱65/kg) - Highland Vegetables</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- User Account Button -->
+                    <div class="user-account-container" id="headerAccountContainer">
+                        <a href="vendor-edit-profile.html" class="btn-user-account" id="headerAccountBtn">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="headerUserName">Vendor</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="toggle-sidebar" id="toggleSidebar" aria-label="Toggle sidebar menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            
+            <!-- Navigation Links -->
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item dashboard-link">
+                        <a href="vendor-dashboard.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>DASHBOARD</span>
+                        </a>
+                    </li>
+                    <li class="nav-item events-link">
+                        <a href="vendor-events.html" class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>EVENTS</span>
+                        </a>
+                    </li>
+                    <li class="nav-item notices-link">
+                        <a href="vendor-notices.html" class="nav-link">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>NOTICES</span>
+                        </a>
+                    </li>
+                    <li class="nav-item survey-form-link">
+                        <a href="survey-form.html" class="nav-link">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>SUBMIT PRICE SURVEY</span>
+                        </a>
+                    </li>
+                    <li class="nav-item cleaning-link">
+                        <a href="vendor-cleaning.html" class="nav-link">
+                            <i class="fas fa-broom"></i>
+                            <span>REQUEST CLEANING</span>
+                        </a>
+                    </li>
+                    <li class="nav-item business-permit-link">
+                        <a href="vendor-business-permit.html" class="nav-link">
+                            <i class="fas fa-certificate"></i>
+                            <span>BUSINESS PERMIT</span>
+                        </a>
+                    </li>
+                    <li class="nav-item edit-profile-link">
+                        <a href="vendor-edit-profile.html" class="nav-link">
+                            <i class="fas fa-user-circle"></i>
+                            <span>EDIT PROFILE</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Logout at the bottom -->
+            <div class="sidebar-footer">
+                <a href="#" id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>LOG OUT</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <header class="top-navbar">
+                <div class="date-time">
+                    <span id="currentDate"></span>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-wrapper">
+                <section class="content-section" id="cleaning-section">
+                    <div class="section-header">
+                        <h2>Request Cleaning</h2>
+                        <p>Submit a cleaning request for your stall or surrounding area.</p>
+                    </div>
+                    <!-- Cleaning Request Status Section -->
+                    <div class="section-content" id="cleaningContent">
+                        <div class="cleaning-status-section">
+                            <h3>My Cleaning Requests</h3>
+                            <div id="cleaningRequestsStatus" class="cleaning-requests-status">
+                                <!-- Cleaning request statuses will be loaded here -->
+                                <div class="no-requests-message">
+                                    <i class="fas fa-broom"></i>
+                                    <p>No cleaning requests submitted yet.</p>
+                                    <small>Submit your first cleaning request below.</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Simplified Cleaning Request Form -->
+                        <div class="cleaning-form-section">
+                            <h3>Submit New Cleaning Request</h3>
+                            <form class="cleaning-request-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="requestType">Cleaning Request Type</label>
+                                    <select id="requestType" name="requestType" required>
+                                        <option value="" disabled selected>Select request type</option>
+                                        <option value="regular">Regular Stall Cleaning</option>
+                                        <option value="deep">Deep Cleaning Service</option>
+                                        <option value="emergency">Emergency Clean-up</option>
+                                        <option value="pest">Pest Control</option>
+                                        <option value="waste">Waste Disposal</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="preferredDate">Preferred Date</label>
+                                    <input type="date" id="preferredDate" name="preferredDate" min="2025-10-04" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="preferredTime">Preferred Time</label>
+                                    <select id="preferredTime" name="preferredTime" required>
+                                        <option value="" disabled selected>Select preferred time</option>
+                                        <option value="early">Early Morning (4:00 AM - 6:00 AM)</option>
+                                        <option value="morning">Morning (8:00 AM - 10:00 AM)</option>
+                                        <option value="afternoon">Afternoon (2:00 PM - 4:00 PM)</option>
+                                        <option value="evening">Evening (8:00 PM - 10:00 PM)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="stallNumber">Stall Number</label>
+                                    <input type="text" id="stallNumber" name="stallNumber" placeholder="Stall Number" value="A-15" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="marketSection">Market Section</label>
+                                    <select id="marketSection" name="marketSection" required>
+                                        <option value="" disabled selected>Select market section</option>
+                                        <option value="sectionA">Section A - Produce</option>
+                                        <option value="sectionB">Section B - Meat/Fish</option>
+                                        <option value="sectionC">Section C - Dry Goods</option>
+                                        <option value="sectionD">Section D - Mixed Items</option>
+                                        <option value="sectionE">Section E - Food Stalls</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label for="requestDescription">Additional Details (Optional)</label>
+                                    <textarea id="requestDescription" name="requestDescription" rows="3" placeholder="Please describe any specific cleaning needs or areas of concern..."></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary" id="resetCleaningForm">Clear Form</button>
+                                <button type="submit" class="btn-primary" id="submitCleaningRequest">Submit Request</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+    </div>
+    
+    <!-- *** PAGE SPECIFIC SCRIPTS GO HERE (if any) *** -->
+    <script src="../JS/vendor-dashboard.js"></script>
+    <script src="cleaning-specific.js"></script>
+    
+</body>
+</html>

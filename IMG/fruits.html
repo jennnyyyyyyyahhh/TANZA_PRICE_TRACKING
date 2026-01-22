@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits - Tanza Public Market</title>
+    <link rel="stylesheet" href="../CSS/fruits.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Left Side -->
+                <div class="logo">
+                    <a href="pricefront.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-seedling"></i>
+                        <span>Tanza Public Market</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Hamburger Menu -->
+                <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Navigation Center -->
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="landingtrial.html" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#weather" class="nav-link">WEATHER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#about" class="nav-link">ABOUT</a>
+                    </li>
+                </ul>
+                
+                <!-- Right Side Actions -->
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">3</span>
+                    </div>
+                    <!-- Login/Signup Button -->
+                    <a href="login.html" class="btn-login">LOGIN / SIGNUP</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="search products" id="searchInput">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <!-- Back Button -->
+            <div class="back-button-container">
+                <a href="pricefront.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Price Dashboard Section -->
+    <main class="main-content">
+        <!-- Page Title -->
+        <div class="page-header">
+            <h1 class="page-title">Fruits</h1>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+            <!-- Apple -->
+            <div class="product-card" data-product="apple">
+                <div class="product-image">
+                    <img src="../IMG/apple.jpg" alt="Apple" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iNjAiIGZpbGw9IiNGRjQ1NDUiLz4KPHRleHQgeD0iMTAwIiB5PSIxODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QXBwbGU8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Apple</h3>
+                </div>
+            </div>
+
+            <!-- Banana -->
+            <div class="product-card" data-product="banana">
+                <div class="product-image">
+                    <img src="../IMG/calamansi.jpg" alt="Banana" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI0MCIgcnk9IjcwIiBmaWxsPSIjRkZEQjAwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJhbmFuYTwvdGV4dD4KPC9zdmc+'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Calamansi</h3>
+                </div>
+            </div>
+
+            <!-- Orange -->
+            <div class="product-card" data-product="orange">
+                <div class="product-image">
+                    <img src="../IMG/banana1.jpg" alt="Orange" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iNjAiIGZpbGw9IiNGRjk4MDAiLz4KPHRleHQgeD0iMTAwIiB5PSIxODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+T3JhbmdlPC90ZXh0Pgo8L3N2Zz4='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Banana (lakatan)</h3>
+                </div>
+            </div>
+
+            <!-- Mango -->
+            <div class="product-card" data-product="mango">
+                <div class="product-image">
+                    <img src="../IMG/banana2.jpg" alt="Mango" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI1MCIgcnk9IjY1IiBmaWxsPSIjRkZEOTAwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1hbmdvPC90ZXh0Pgo8L3N2Zz4='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Banana (latundan)</h3>
+                </div>
+            </div>
+
+            <!-- Grapes -->
+            <div class="product-card" data-product="grapes">
+                <div class="product-image">
+                    <img src="../IMG/papaya.jpg" alt="Grapes" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9Ijg1IiBjeT0iNzAiIHI9IjE1IiBmaWxsPSIjNjY0NENDIi8+CjxjaXJjbGUgY3g9IjExNSIgY3k9IjcwIiByPSIxNSIgZmlsbD0iIzY2NDRDQyIvPgo8Y2lyY2xlIGN4PSI4NSIgY3k9IjEwMCIgcj0iMTUiIGZpbGw9IiM2NjQ0Q0MiLz4KPGNpcmNsZSBjeD0iMTE1IiBjeT0iMTAwIiByPSIxNSIgZmlsbD0iIzY2NDRDQyIvPgo8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMzAiIHI9IjE1IiBmaWxsPSIjNjY0NENDIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkdyYXBlczwvdGV4dD4KPC9zdmc+'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Papaya</h3>
+                </div>
+            </div>
+
+            <!-- Pineapple -->
+            <div class="product-card" data-product="pineapple">
+                <div class="product-image">
+                    <img src="../IMG/melon.jpg" alt="Pineapple" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMTAiIHJ4PSI0NSIgcnk9IjYwIiBmaWxsPSIjRkY5ODAwIi8+CjxyZWN0IHg9IjkwIiB5PSI0MCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjNENBRjUwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBpbmVhcHBsZTwvdGV4dD4KPC9zdmc+'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Melon</h3>
+                </div>
+            </div>
+
+            <!-- Watermelon -->
+            <div class="product-card" data-product="watermelon">
+                <div class="product-image">
+                    <img src="../IMG/watermelon.jpg" alt="Watermelon" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iNjAiIGZpbGw9IiMyOEE3NDUiLz4KPHRleHQgeD0iMTAwIiB5PSIxODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+V2F0ZXJtZWxvbjwvdGV4dD4KPC9zdmc+'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Watermelon</h3>
+                </div>
+            </div>
+
+            <!-- Papaya -->
+            <div class="product-card" data-product="papaya">
+                <div class="product-image">
+                    <img src="../IMG/mango1.jpg" alt="Papaya" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI0NSIgcnk9IjY1IiBmaWxsPSIjRkZBNTAwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBhcGF5YTwvdGV4dD4KPC9zdmc+'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Mango (carabao)</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-container">
+            <div class="pagination">
+                <button class="pagination-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <span class="page-indicator">
+                    <span class="current-page">1</span>
+                    <span class="page-separator">/</span>
+                    <span class="total-pages">2</span>
+                </span>
+                <button class="pagination-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Price Modal -->
+    <div class="modal-overlay" id="priceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title-container">
+                    <img class="modal-product-image" id="modalProductImage" src="" alt="">
+                    <h2 class="modal-title" id="modalTitle">Fruit Prices</h2>
+                </div>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="price-comparison-table">
+                    <div class="table-header">
+                        <h3>Compare Prices Across Stores</h3>
+                        <p class="last-updated">Last updated: <span id="lastUpdated">Today, 2:30 PM</span></p>
+                    </div>
+                    
+                    <div class="price-cards-container" id="priceCardsContainer">
+                        <!-- Price cards will be dynamically inserted here -->
+                    </div>
+                    
+                    <div class="price-summary">
+                        <div class="best-deal">
+                            <i class="fas fa-trophy"></i>
+                            <span class="best-deal-text">Best Deal: </span>
+                            <span class="best-deal-store" id="bestDealStore">Public Market</span>
+                            <span class="best-deal-price" id="bestDealPrice">₱65/kg</span>
+                        </div>
+                        <div class="price-range">
+                            <i class="fas fa-chart-line"></i>
+                            <span class="price-range-text">Price Range: </span>
+                            <span class="price-range-values" id="priceRange">₱65 - ₱89 per kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn-secondary" id="closeModalBtn">Close</button>
+                <button class="btn-primary" id="viewStoreLocation">View Store Locations</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/fruits.js"></script>
+    <script src="../JS/notification-sync.js"></script>
+</body>
+</html>

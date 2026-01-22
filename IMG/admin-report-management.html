@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Management - Tanza Public Market</title>
+    <link rel="stylesheet" href="../CSS/minimalist-responsive.css">
+    <link rel="stylesheet" href="../CSS/admin-dashboard.css">
+    <link rel="stylesheet" href="../CSS/admin-dashboard-responsive.css">
+    <link rel="stylesheet" href="../CSS/notification-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../JS/disable-console-logs.js"></script>
+    <script src="../JS/disable-all-notifications.js"></script>
+    <script src="../JS/disable-login-requirements.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                
+                <div class="logo">
+                    <a href="pricefront.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-seedling"></i>
+                        <span class="logo-text">Tanza Public Market</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="landingtrial.html" class="nav-link">HOME</a></li>
+                    <li class="nav-item"><a href="landingtrial.html#weather" class="nav-link">WEATHER</a></li>
+                    <li class="nav-item"><a href="landingtrial.html#about" class="nav-link">ABOUT</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">5</span>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Market Price Alerts</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Fresh Tomatoes - Tanza Market</strong></p>
+                                    <small>Now ₱65/kg (was ₱85/kg) - Save 24%</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-account-container" id="headerAccountContainer">
+                        <a href="#profile" class="btn-user-account" id="adminAccountBtn">
+                            <i class="fas fa-user-shield"></i>
+                            <span id="headerUserName">Admin</span>
+                        </a>
+                        <div class="account-dropdown" id="accountDropdown">
+                            <div class="account-dropdown-header">
+                                <div class="account-avatar"><i class="fas fa-user-shield"></i></div>
+                                <div class="account-user-info">
+                                    <h3>Admin User</h3>
+                                    <p>admin@farmfreshmarket.com</p>
+                                    <span class="user-type">Administrator</span>
+                                </div>
+                            </div>
+                            <div class="account-menu">
+                                <a href="#" class="account-menu-item" data-action="profile"><i class="fas fa-user-shield"></i><span>ADMIN PROFILE</span></a>
+                                <a href="#" class="account-menu-item" data-action="settings"><i class="fas fa-cog"></i><span>SYSTEM SETTINGS</span></a>
+                                <a href="#" class="account-menu-item logout" data-action="logout"><i class="fas fa-sign-out-alt"></i><span>LOGOUT</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle sidebar menu">
+        <i class="fas fa-bars"></i>
+        <span>Menu</span>
+    </button>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Admin Panel</span>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                                <ul class="nav-list">
+                    <li class="nav-item"><a href="admin-dashboard.html" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>DASHBOARD</span></a></li>
+                    <li class="nav-item"><a href="admin-vendor-management.html" class="nav-link"><i class="fas fa-users"></i><span>VENDOR MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-survey-form.html" class="nav-link"><i class="fas fa-clipboard-list"></i><span>SUBMIT SURVEY FORM</span></a></li>
+                    <li class="nav-item"><a href="admin-report-management.html" class="nav-link"><i class="fas fa-exclamation-triangle"></i><span>REPORT MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-cleaning-management.html" class="nav-link"><i class="fas fa-broom"></i><span>CLEANING MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-vendor-requests.html" class="nav-link"><i class="fas fa-file-alt"></i><span>VENDOR REQUESTS</span></a></li>
+                    <li class="nav-item"><a href="admin-stall-management.html" class="nav-link"><i class="fas fa-store"></i><span>STALL MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-business-permit.html" class="nav-link"><i class="fas fa-certificate"></i><span>BUSINESS PERMIT</span></a></li>
+                    <li class="nav-item"><a href="admin-events.html" class="nav-link"><i class="fas fa-calendar-alt"></i><span>EVENTS</span></a></li>
+                    <li class="nav-item"><a href="admin-notices.html" class="nav-link"><i class="fas fa-bullhorn"></i><span>NOTICES</span></a></li>
+                    <li class="nav-item"><a href="admin-notification-management.html" class="nav-link"><i class="fas fa-bell"></i><span>NOTIFICATION MANAGEMENT</span></a></li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="#" id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>LOG OUT</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-navbar">
+                <div class="top-nav-left">
+                    <button class="mobile-sidebar-trigger" id="mobileSidebarTrigger" aria-label="Open sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Report Management</h1>
+                </div>
+                <div class="date-time">
+                    <span id="currentDate">October 23, 2025</span>
+                </div>
+            </header>
+
+            <!-- Report Management Content -->
+            <div class="content-wrapper">
+                <section class="content-section active" id="report-management-section">
+                    <div class="section-header">
+                        <h2>Report Management</h2>
+                        <p>Handle incident and customer reports about vendors.</p>
+                    </div>
+                    <div class="section-content">
+                        <div class="report-management-controls">
+                            <div class="filter-options">
+                                <select id="reportStatusFilter">
+                                    <option value="all">All Statuses</option>
+                                    <option value="new">New</option>
+                                    <option value="investigating">Investigating</option>
+                                    <option value="resolved">Resolved</option>
+                                    <option value="dismissed">Dismissed</option>
+                                </select>
+                                <select id="reportCategoryFilter">
+                                    <option value="all">All Categories</option>
+                                    <option value="product-quality">Product Quality</option>
+                                    <option value="pricing">Pricing Issues</option>
+                                    <option value="hygiene">Hygiene Concerns</option>
+                                    <option value="service">Customer Service</option>
+                                    <option value="safety">Safety Issues</option>
+                                    <option value="fraud">Fraudulent Practices</option>
+                                </select>
+                            </div>
+                            <div class="report-actions-global">
+                                <button class="btn-sm btn-primary"><i class="fas fa-file-export"></i> Export Reports</button>
+                                <button class="btn-sm btn-secondary"><i class="fas fa-print"></i> Print List</button>
+                            </div>
+                        </div>
+
+                        <div class="report-list-container">
+                            <table class="report-table">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" id="selectAllReports"></th>
+                                        <th>ID</th>
+                                        <th>Report Date</th>
+                                        <th>Customer</th>
+                                        <th>Vendor Name</th>
+                                        <th>Stall</th>
+                                        <th>Category</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" class="report-select"></td>
+                                        <td>R001</td>
+                                        <td>Sep 24, 2025</td>
+                                        <td>Elena Cruz</td>
+                                        <td>Maria Santos</td>
+                                        <td>A-12</td>
+                                        <td><span class="category-badge quality">Product Quality</span></td>
+                                        <td><span class="status-badge new">New</span></td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Investigate"><i class="fas fa-search"></i></button>
+                                            <button class="btn-icon" title="Dismiss"><i class="fas fa-times"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="report-select"></td>
+                                        <td>R002</td>
+                                        <td>Sep 23, 2025</td>
+                                        <td>Marco Diaz</td>
+                                        <td>John Rodriguez</td>
+                                        <td>B-05</td>
+                                        <td><span class="category-badge pricing">Pricing Issues</span></td>
+                                        <td><span class="status-badge investigating">Investigating</span></td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Mark Resolved"><i class="fas fa-check"></i></button>
+                                            <button class="btn-icon" title="Dismiss"><i class="fas fa-times"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="report-select"></td>
+                                        <td>R003</td>
+                                        <td>Sep 22, 2025</td>
+                                        <td>Sofia Reyes</td>
+                                        <td>Ana Reyes</td>
+                                        <td>C-08</td>
+                                        <td><span class="category-badge hygiene">Hygiene Concerns</span></td>
+                                        <td><span class="status-badge investigating">Investigating</span></td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Mark Resolved"><i class="fas fa-check"></i></button>
+                                            <button class="btn-icon" title="Dismiss"><i class="fas fa-times"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="report-select"></td>
+                                        <td>R004</td>
+                                        <td>Sep 21, 2025</td>
+                                        <td>Tomas Garcia</td>
+                                        <td>Carlos Mendoza</td>
+                                        <td>D-03</td>
+                                        <td><span class="category-badge service">Customer Service</span></td>
+                                        <td><span class="status-badge resolved">Resolved</span></td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Reopen"><i class="fas fa-redo"></i></button>
+                                            <button class="btn-icon" title="Archive"><i class="fas fa-archive"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="report-select"></td>
+                                        <td>R005</td>
+                                        <td>Sep 20, 2025</td>
+                                        <td>Miguel Santos</td>
+                                        <td>Luisa Tan</td>
+                                        <td>E-10</td>
+                                        <td><span class="category-badge safety">Safety Issues</span></td>
+                                        <td><span class="status-badge new">New</span></td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Investigate"><i class="fas fa-search"></i></button>
+                                            <button class="btn-icon" title="Dismiss"><i class="fas fa-times"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="report-select"></td>
+                                        <td>R006</td>
+                                        <td>Sep 19, 2025</td>
+                                        <td>Isabella Lopez</td>
+                                        <td>Pedro Dominguez</td>
+                                        <td>A-05</td>
+                                        <td><span class="category-badge fraud">Fraudulent Practices</span></td>
+                                        <td><span class="status-badge dismissed">Dismissed</span></td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Reopen"><i class="fas fa-redo"></i></button>
+                                            <button class="btn-icon" title="Archive"><i class="fas fa-archive"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="report-details-container" style="display: none;">
+                            <div class="details-header">
+                                <h3>Report Details <span id="reportIdDisplay">R001</span></h3>
+                                <button class="btn-icon" id="closeReportDetails" title="Close"><i class="fas fa-times"></i></button>
+                            </div>
+                            <div class="details-content">
+                                <div class="detail-row">
+                                    <div class="detail-label">Report Date:</div>
+                                    <div class="detail-value" id="reportDateDisplay">Sep 24, 2025</div>
+                                </div>
+                                <div class="detail-row">
+                                    <div class="detail-label">Status:</div>
+                                    <div class="detail-value">
+                                        <select id="reportStatusUpdate">
+                                            <option value="new">New</option>
+                                            <option value="investigating">Investigating</option>
+                                            <option value="resolved">Resolved</option>
+                                            <option value="dismissed">Dismissed</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="detail-row">
+                                    <div class="detail-label">Customer:</div>
+                                    <div class="detail-value" id="customerNameDisplay">Elena Cruz</div>
+                                </div>
+                                <div class="detail-row">
+                                    <div class="detail-label">Customer Contact:</div>
+                                    <div class="detail-value" id="customerContactDisplay">0912-345-6789</div>
+                                </div>
+                                <div class="detail-row">
+                                    <div class="detail-label">Vendor:</div>
+                                    <div class="detail-value" id="vendorNameDisplay">Maria Santos</div>
+                                </div>
+                                <div class="detail-row">
+                                    <div class="detail-label">Stall:</div>
+                                    <div class="detail-value" id="stallDisplay">A-12</div>
+                                </div>
+                                <div class="detail-row">
+                                    <div class="detail-label">Category:</div>
+                                    <div class="detail-value">
+                                        <select id="reportCategoryUpdate">
+                                            <option value="product-quality">Product Quality</option>
+                                            <option value="pricing">Pricing Issues</option>
+                                            <option value="hygiene">Hygiene Concerns</option>
+                                            <option value="service">Customer Service</option>
+                                            <option value="safety">Safety Issues</option>
+                                            <option value="fraud">Fraudulent Practices</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="detail-row full-width">
+                                    <div class="detail-label">Description:</div>
+                                    <div class="detail-value" id="reportDescriptionDisplay">
+                                        <p>The produce sold to me yesterday was not fresh. Some of the vegetables were already beginning to rot, and this was not visible during purchase as they were packed in a way that hid the bad parts. I would like a refund or replacement with fresh produce.</p>
+                                    </div>
+                                </div>
+                                <div class="detail-row full-width">
+                                    <div class="detail-label">Admin Notes:</div>
+                                    <div class="detail-value">
+                                        <textarea id="adminNotesInput" placeholder="Add notes about this report..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="detail-row full-width">
+                                    <div class="detail-label">Actions Taken:</div>
+                                    <div class="detail-value" id="actionsTakenDisplay">
+                                        <ul class="actions-list">
+                                            <li><span class="action-date">Sep 24, 2025 10:15 AM</span> - Report received and registered.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="details-footer">
+                                <button class="btn-sm btn-primary" id="saveReportChanges">Save Changes</button>
+                                <button class="btn-sm btn-secondary" id="contactCustomer">Contact Customer</button>
+                                <button class="btn-sm btn-secondary" id="contactVendor">Contact Vendor</button>
+                            </div>
+                        </div>
+
+                        <div class="report-pagination">
+                            <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <span class="pagination-dots">...</span>
+                            <button class="pagination-btn">8</button>
+                            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+
+                        <div class="report-bulk-actions">
+                            <select id="bulkReportActionSelect">
+                                <option value="">Bulk Actions</option>
+                                <option value="mark-investigating">Mark as Investigating</option>
+                                <option value="mark-resolved">Mark as Resolved</option>
+                                <option value="mark-dismissed">Mark as Dismissed</option>
+                                <option value="export-selected">Export Selected</option>
+                            </select>
+                            <button class="btn-sm btn-secondary" id="applyBulkReportAction">Apply</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../JS/admin-sidebar.js"></script>
+    <script src="../JS/admin-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Price Data - Tanza Public Market</title>
+    
+    <!-- Global Standards CSS -->
+    <link rel="stylesheet" href="../CSS/global-standards.css">
+    
+    <!-- Page-Specific CSS -->
+    <link rel="stylesheet" href="../CSS/export-data.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a href="landingtrial.html" class="logo">
+                    <i class="fas fa-seedling"></i>
+                    <span>Tanza Public Market</span>
+                </a>
+                
+                <!-- Hamburger Menu (Mobile) -->
+                <button class="hamburger-menu" id="hamburgerMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="landingtrial.html" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pricefront.html" class="nav-link active">PRICE MONITORING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#weather" class="nav-link">WEATHER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#about" class="nav-link">ABOUT</a>
+                    </li>
+                </ul>
+                
+                <!-- Right Actions -->
+                <div class="nav-actions">
+                    <!-- Notification Bell -->
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">3</span>
+                        
+                        <!-- Notification Dropdown -->
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Notifications</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p>Price Drop Alert</p>
+                                    <small>Tomatoes price decreased by 15%</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-exclamation-triangle price-alert"></i>
+                                <div class="notification-content">
+                                    <p>High Price Alert</p>
+                                    <small>Onions exceeding normal range</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p>New Update Available</p>
+                                    <small>Fresh fish stocks updated</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Login Button -->
+                    <a href="login.html" class="btn-login">LOGIN / SIGNUP</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="export-main">
+        <div class="export-container">
+            <!-- Back Button -->
+            <div class="back-navigation">
+                <a href="pricefront.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Price Monitoring</span>
+                </a>
+            </div>
+
+            <!-- Export Form Card -->
+            <div class="export-card">
+                <div class="export-header">
+                    <i class="fas fa-file-download"></i>
+                    <h1>Export Price Data</h1>
+                    <p>Generate and download comprehensive price reports</p>
+                </div>
+
+                <form id="exportForm" class="export-form">
+                    <!-- Date Range Section -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-calendar-alt"></i>
+                            Date Range
+                        </h2>
+                        <div class="date-inputs">
+                            <div class="input-group">
+                                <label for="dateFrom">From</label>
+                                <div class="input-wrapper">
+                                    <input type="date" id="dateFrom" name="dateFrom" required>
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="dateTo">To</label>
+                                <div class="input-wrapper">
+                                    <input type="date" id="dateTo" name="dateTo" required>
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="date-presets">
+                            <button type="button" class="preset-btn" data-range="today">Today</button>
+                            <button type="button" class="preset-btn" data-range="week">Last 7 Days</button>
+                            <button type="button" class="preset-btn" data-range="month">Last 30 Days</button>
+                            <button type="button" class="preset-btn" data-range="year">This Year</button>
+                        </div>
+                    </div>
+
+                    <!-- Include in Report Section -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-list-check"></i>
+                            Include in Report
+                        </h2>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="includeStores" id="includeStores" checked>
+                                <span class="checkmark"></span>
+                                <div class="checkbox-content">
+                                    <i class="fas fa-store"></i>
+                                    <span>All Stores</span>
+                                    <small>Include data from all market stores</small>
+                                </div>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="includeTrends" id="includeTrends">
+                                <span class="checkmark"></span>
+                                <div class="checkbox-content">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Price Trends</span>
+                                    <small>Historical price movement analysis</small>
+                                </div>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="includeComparison" id="includeComparison">
+                                <span class="checkmark"></span>
+                                <div class="checkbox-content">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <span>Price Comparison</span>
+                                    <small>Compare prices across stores</small>
+                                </div>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="includeCharts" id="includeCharts">
+                                <span class="checkmark"></span>
+                                <div class="checkbox-content">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Charts & Graphs</span>
+                                    <small>Visual data representation</small>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- File Format Section -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-file-export"></i>
+                            File Format
+                        </h2>
+                        <div class="format-options">
+                            <label class="format-card">
+                                <input type="radio" name="format" value="pdf" checked>
+                                <div class="format-content">
+                                    <div class="format-icon pdf">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                    <div class="format-info">
+                                        <h3>PDF</h3>
+                                        <p>Portable Document Format</p>
+                                        <small>Best for printing and sharing</small>
+                                    </div>
+                                    <div class="format-checkmark">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="format-card">
+                                <input type="radio" name="format" value="excel">
+                                <div class="format-content">
+                                    <div class="format-icon excel">
+                                        <i class="fas fa-file-excel"></i>
+                                    </div>
+                                    <div class="format-info">
+                                        <h3>Excel</h3>
+                                        <p>Microsoft Excel Format</p>
+                                        <small>Best for data analysis</small>
+                                    </div>
+                                    <div class="format-checkmark">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="format-card">
+                                <input type="radio" name="format" value="csv">
+                                <div class="format-content">
+                                    <div class="format-icon csv">
+                                        <i class="fas fa-file-csv"></i>
+                                    </div>
+                                    <div class="format-info">
+                                        <h3>CSV</h3>
+                                        <p>Comma-Separated Values</p>
+                                        <small>Universal compatibility</small>
+                                    </div>
+                                    <div class="format-checkmark">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="window.location.href='pricefront.html'">
+                            <i class="fas fa-times"></i>
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-download"></i>
+                            Generate & Download Report
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="info-cards">
+                <div class="info-card">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>Export Guidelines</h3>
+                    <ul>
+                        <li>Maximum date range: 365 days</li>
+                        <li>Reports include all commodity categories</li>
+                        <li>Large datasets may take longer to generate</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Tips</h3>
+                    <ul>
+                        <li>Use CSV format for importing to other systems</li>
+                        <li>PDF format includes visual charts</li>
+                        <li>Excel format allows custom calculations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <h3>Generating Report...</h3>
+            <p>Please wait while we prepare your data</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-text" id="progressText">0%</span>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <h2>Report Generated Successfully!</h2>
+            <p>Your report is ready for download</p>
+            <div class="modal-actions">
+                <button class="btn-primary" id="downloadBtn">
+                    <i class="fas fa-download"></i>
+                    Download Now
+                </button>
+                <button class="btn-secondary" id="closeModalBtn">
+                    Generate Another Report
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburgerMenu');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        }
+        
+        // Notification dropdown toggle
+        const notificationBell = document.getElementById('notificationBell');
+        const notificationDropdown = document.getElementById('notificationDropdown');
+        
+        if (notificationBell && notificationDropdown) {
+            notificationBell.addEventListener('click', function(e) {
+                e.stopPropagation();
+                notificationDropdown.classList.toggle('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!notificationBell.contains(event.target) && !notificationDropdown.contains(event.target)) {
+                    notificationDropdown.classList.remove('active');
+                }
+            });
+        }
+
+        // Set default dates
+        const today = new Date();
+        const dateFrom = document.getElementById('dateFrom');
+        const dateTo = document.getElementById('dateTo');
+        
+        // Set default: last 30 days to today
+        const thirtyDaysAgo = new Date(today);
+        thirtyDaysAgo.setDate(today.getDate() - 30);
+        
+        dateFrom.value = thirtyDaysAgo.toISOString().split('T')[0];
+        dateTo.value = today.toISOString().split('T')[0];
+        
+        // Date preset buttons
+        const presetButtons = document.querySelectorAll('.preset-btn');
+        presetButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const range = this.dataset.range;
+                const today = new Date();
+                let fromDate = new Date();
+                
+                switch(range) {
+                    case 'today':
+                        fromDate = today;
+                        break;
+                    case 'week':
+                        fromDate.setDate(today.getDate() - 7);
+                        break;
+                    case 'month':
+                        fromDate.setDate(today.getDate() - 30);
+                        break;
+                    case 'year':
+                        fromDate.setFullYear(today.getFullYear(), 0, 1);
+                        break;
+                }
+                
+                dateFrom.value = fromDate.toISOString().split('T')[0];
+                dateTo.value = today.toISOString().split('T')[0];
+                
+                // Visual feedback
+                presetButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Form submission
+        const exportForm = document.getElementById('exportForm');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        const successModal = document.getElementById('successModal');
+        const progressFill = document.getElementById('progressFill');
+        const progressText = document.getElementById('progressText');
+        
+        exportForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const format = formData.get('format');
+            const dateFromValue = formData.get('dateFrom');
+            const dateToValue = formData.get('dateTo');
+            
+            // Validate dates
+            if (new Date(dateFromValue) > new Date(dateToValue)) {
+                alert('Start date must be before end date');
+                return;
+            }
+            
+            // Show loading overlay
+            loadingOverlay.classList.add('active');
+            
+            // Simulate progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 100) progress = 100;
+                
+                progressFill.style.width = progress + '%';
+                progressText.textContent = Math.round(progress) + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        loadingOverlay.classList.remove('active');
+                        successModal.classList.add('active');
+                    }, 500);
+                }
+            }, 200);
+        });
+        
+        // Download button in success modal
+        const downloadBtn = document.getElementById('downloadBtn');
+        downloadBtn.addEventListener('click', function() {
+            const format = document.querySelector('input[name="format"]:checked').value;
+            const dateFromValue = dateFrom.value;
+            const dateToValue = dateTo.value;
+            
+            // Create filename
+            const filename = `price_report_${dateFromValue}_to_${dateToValue}.${format}`;
+            
+            // Simulate download (in real app, this would be an actual file download)
+            alert(`Downloading: ${filename}\n\nIn production, this would download the actual ${format.toUpperCase()} file.`);
+            
+            successModal.classList.remove('active');
+            
+            // Reset form
+            exportForm.reset();
+            dateFrom.value = thirtyDaysAgo.toISOString().split('T')[0];
+            dateTo.value = today.toISOString().split('T')[0];
+            document.querySelector('input[name="format"][value="pdf"]').checked = true;
+            document.getElementById('includeStores').checked = true;
+        });
+        
+        // Close modal button
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        closeModalBtn.addEventListener('click', function() {
+            successModal.classList.remove('active');
+        });
+        
+        // Format card selection visual feedback
+        const formatCards = document.querySelectorAll('.format-card');
+        formatCards.forEach(card => {
+            card.addEventListener('click', function() {
+                formatCards.forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+        
+        // Set initial selected card
+        document.querySelector('.format-card input:checked').closest('.format-card').classList.add('selected');
+    </script>
+</body>
+</html>

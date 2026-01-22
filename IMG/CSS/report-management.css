@@ -1,0 +1,224 @@
+/* Report Management Styles */
+.report-management-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.report-list-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.report-table th, 
+.report-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.report-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.report-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.category-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.category-badge.quality {
+    background-color: rgba(155, 89, 182, 0.1);
+    color: #9b59b6;
+}
+
+.category-badge.pricing {
+    background-color: rgba(41, 128, 185, 0.1);
+    color: #2980b9;
+}
+
+.category-badge.hygiene {
+    background-color: rgba(241, 196, 15, 0.1);
+    color: #f1c40f;
+}
+
+.category-badge.service {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+.category-badge.safety {
+    background-color: rgba(192, 57, 43, 0.1);
+    color: #c0392b;
+}
+
+.category-badge.fraud {
+    background-color: rgba(44, 62, 80, 0.1);
+    color: #2c3e50;
+}
+
+.status-badge.new {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+}
+
+.status-badge.investigating {
+    background-color: rgba(243, 156, 18, 0.1);
+    color: #f39c12;
+}
+
+.status-badge.resolved {
+    background-color: rgba(39, 174, 96, 0.1);
+    color: #27ae60;
+}
+
+.status-badge.dismissed {
+    background-color: rgba(127, 140, 141, 0.1);
+    color: #7f8c8d;
+}
+
+.report-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.report-bulk-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.report-details-container {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #eee;
+}
+
+.details-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.details-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-row {
+    display: flex;
+    width: 48%;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.detail-row.full-width {
+    width: 100%;
+}
+
+.detail-label {
+    font-weight: 600;
+    min-width: 120px;
+}
+
+.detail-value {
+    flex-grow: 1;
+}
+
+.detail-value select,
+.detail-value textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.detail-value textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.actions-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.actions-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.actions-list li:last-child {
+    border-bottom: none;
+}
+
+.action-date {
+    font-weight: 600;
+    color: var(--admin-highlight);
+}
+
+.details-footer {
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive styles for report management */
+@media (max-width: 992px) {
+    .report-management-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .report-actions-global {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+    
+    .detail-row {
+        width: 100%;
+    }
+    
+    .report-table {
+        display: block;
+        overflow-x: auto;
+    }
+}

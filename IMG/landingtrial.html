@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#4a8c33">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Tanza">
+    <meta name="description" content="Real-time public market price monitoring for fresh produce, fruits, vegetables, and more in Tanza, Cavite">
+    <title>Tanza Public Market - Public Market Price Monitoring</title>
+    <link rel="stylesheet" href="../CSS/landingtrial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Price update animations */
+        .price-card.updating {
+            animation: priceUpdate 0.5s ease-in-out;
+        }
+        
+        @keyframes priceUpdate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3); }
+            100% { transform: scale(1); }
+        }
+        
+        .price-card {
+            transition: all 0.3s ease;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Left Side -->
+                <div class="logo">
+                    <a href="pricefront.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-seedling"></i>
+                        <span>Tanza Public Market</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Hamburger Menu -->
+                <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Navigation Center -->
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#weather" class="nav-link">WEATHER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">ABOUT</a>
+                    </li>
+                </ul>
+                
+                <!-- Right Side Actions -->
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">5</span>
+                        <!-- Notification Dropdown -->
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Market Price Alerts</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Fresh Tomatoes - Tanza Market</strong></p>
+                                    <small>Now ₱65/kg (was ₱85/kg) - Save 24% at Maria's Farm</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Local Rice - Farmer's Direct</strong></p>
+                                    <small>Now ₱48/kg (was ₱55/kg) - Save 13% from Laguna Farms</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-bell price-alert"></i>
+                                <div class="notification-content">
+                                    <p><strong>Organic Apples - Limited Stock</strong></p>
+                                    <small>₱95/kg - Only 10kg left at Public Market</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Ripe Bananas - Morning Harvest</strong></p>
+                                    <small>Now ₱35/kg (was ₱45/kg) - Fresh from Batangas Farms</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Carrots - Bulk Discount</strong></p>
+                                    <small>Now ₱50/kg (was ₱65/kg) - Highland Vegetables</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="login.html" class="btn-login">LOGIN / SIGNUP</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <!-- Full-page Image Carousel -->
+            <div class="hero-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slide active">
+                        <img src="../IMG/market1.jpg" alt="Tanza Public Market" class="carousel-image">
+                        <div class="carousel-caption">Fresh Produce Direct from Farms</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../IMG/market2.jpg" alt="Farmers Market" class="carousel-image">
+                        <div class="carousel-caption">Supporting Local Farmers</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../IMG/market3.jpg" alt="Fresh Vegetables" class="carousel-image">
+                        <div class="carousel-caption">Quality Produce at Fair Prices</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../IMG/market4.jpg" alt="Market Vendors" class="carousel-image">
+                        <div class="carousel-caption">Community-Driven Marketplace</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-content">
+                <h1 class="hero-title">Tanza Public Market Price Monitor</h1>
+                <p class="hero-subtitle">Track fresh produce prices from local farmers and vendors. Get real-time alerts on the best deals from our community marketplace!</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-text">Local Vendors</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-text">Market Updates</div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button id="browsePricesBtn" class="btn-primary" onclick="window.location.href='pricefront.html'">Browse Market Prices</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="lowest-prices-section">
+                    <div class="section-header">
+                        <h2 class="lowest-products-title">
+                            <i class="fas fa-fire"></i> Today's Lowest Prices
+                        </h2>
+                        <p class="section-subtitle">Real-time prices updated from local markets</p>
+                    </div>
+                    
+                    <div class="modern-price-grid">
+                        <!-- Vegetables Card -->
+                        <div class="modern-price-card vegetables">
+                            <div class="card-header">
+                                <span class="category-badge vegetables-badge">
+                                    <i class="fas fa-leaf"></i> VEGETABLES
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <img src="../IMG/radish.jpg" alt="White Radish" class="product-image">
+                                <h3 class="product-name">White Radish</h3>
+                                <div class="price-display">
+                                    <span class="price-amount">₱300</span>
+                                    <span class="price-unit">/kg</span>
+                                </div>
+                                <div class="store-location">
+                                    <i class="fas fa-map-marker-alt"></i> Public Market
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rice & Grains Card -->
+                        <div class="modern-price-card rice">
+                            <div class="card-header">
+                                <span class="category-badge rice-badge">
+                                    <i class="fas fa-seedling"></i> RICE & GRAINS
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <img src="../IMG/white-rice.jpg" alt="NFA Rice" class="product-image">
+                                <h3 class="product-name">NFA Rice</h3>
+                                <div class="price-display">
+                                    <span class="price-amount">₱42</span>
+                                    <span class="price-unit">/kg</span>
+                                </div>
+                                <div class="store-location">
+                                    <i class="fas fa-map-marker-alt"></i> Public Market
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fruits Card -->
+                        <div class="modern-price-card fruits">
+                            <div class="card-header">
+                                <span class="category-badge fruits-badge">
+                                    <i class="fas fa-apple-alt"></i> FRUITS
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <img src="../IMG/banana1.jpg" alt="Lakatan Banana" class="product-image">
+                                <h3 class="product-name">Lakatan Banana</h3>
+                                <div class="price-display">
+                                    <span class="price-amount">₱45</span>
+                                    <span class="price-unit">/kg</span>
+                                </div>
+                                <div class="store-location">
+                                    <i class="fas fa-map-marker-alt"></i> Public Market
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Meat & Poultry Card -->
+                        <div class="modern-price-card meat">
+                            <div class="card-header">
+                                <span class="category-badge meat-badge">
+                                    <i class="fas fa-drumstick-bite"></i> MEAT & POULTRY
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <img src="../IMG/chicken-breast.jpg" alt="Chicken Breast" class="product-image">
+                                <h3 class="product-name">Chicken Breast</h3>
+                                <div class="price-display">
+                                    <span class="price-amount">₱180</span>
+                                    <span class="price-unit">/kg</span>
+                                </div>
+                                <div class="store-location">
+                                    <i class="fas fa-map-marker-alt"></i> Public Market
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fish & Seafood Card -->
+                        <div class="modern-price-card fish">
+                            <div class="card-header">
+                                <span class="category-badge fish-badge">
+                                    <i class="fas fa-fish"></i> FISH & SEAFOOD
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <img src="../IMG/tilapia.jpg" alt="Fresh Tilapia" class="product-image">
+                                <h3 class="product-name">Fresh Tilapia</h3>
+                                <div class="price-display">
+                                    <span class="price-amount">₱120</span>
+                                    <span class="price-unit">/kg</span>
+                                </div>
+                                <div class="store-location">
+                                    <i class="fas fa-map-marker-alt"></i> Public Market
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other Products Card -->
+                        <div class="modern-price-card other">
+                            <div class="card-header">
+                                <span class="category-badge other-badge">
+                                    <i class="fas fa-shopping-basket"></i> OTHER
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <img src="../IMG/egg.jpg" alt="Fresh Eggs" class="product-image">
+                                <h3 class="product-name">Fresh Eggs</h3>
+                                <div class="price-display">
+                                    <span class="price-amount">₱6</span>
+                                    <span class="price-unit">/piece</span>
+                                </div>
+                                <div class="store-location">
+                                    <i class="fas fa-map-marker-alt"></i> Public Market
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weather Section -->
+        <section class="weather-section" id="weather">
+            <div class="weather-header">
+                <h2 class="section-title">
+                    Weather & Harvest Impact 
+                    <span class="location-badge">Tanza, Cavite</span>
+                </h2>
+            </div>
+            <div class="weather-cards">
+                <div class="weather-card today">
+                    <div class="weather-day" id="forecastDay1">THURSDAY</div>
+                    <div class="weather-date" id="forecastDate1">October 9</div>
+                    <div class="weather-icon" id="weatherIcon1">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="weather-temp" id="weatherTemp1">32°C</div>
+                    <div class="weather-condition" id="weatherCondition1">Sunny & Perfect</div>
+                    <div class="price-impact good">
+                        <i class="fas fa-leaf"></i>
+                        <span>Great Harvest</span>
+                    </div>
+                </div>
+                
+                <div class="weather-card">
+                    <div class="weather-day" id="forecastDay2">FRIDAY</div>
+                    <div class="weather-date" id="forecastDate2">October 10</div>
+                    <div class="weather-icon" id="weatherIcon2">
+                        <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <div class="weather-temp" id="weatherTemp2">26°C</div>
+                    <div class="weather-condition" id="weatherCondition2">Light Showers</div>
+                    <div class="price-impact neutral">
+                        <i class="fas fa-seedling"></i>
+                        <span>Good for Crops</span>
+                    </div>
+                </div>
+                
+                <div class="weather-card">
+                    <div class="weather-day" id="forecastDay3">SATURDAY</div>
+                    <div class="weather-date" id="forecastDate3">October 11</div>
+                    <div class="weather-icon" id="weatherIcon3">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <div class="weather-temp" id="weatherTemp3">29°C</div>
+                    <div class="weather-condition" id="weatherCondition3">Partly Cloudy</div>
+                    <div class="price-impact good">
+                        <i class="fas fa-tractor"></i>
+                        <span>Farming Weather</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <h2 class="section-title">About Tanza Public Market Monitor</h2>
+            <div class="about-content">
+                <p>Connecting our community with fresh, local produce through transparent pricing. We bridge the gap between local farmers and consumers by providing real-time market information from Tanza Public Market and surrounding agricultural areas.</p>
+                
+                <div class="about-stats">
+                    <div class="about-stat">
+                        <div class="stat-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>50+ Market Vendors</h4>
+                            <p>Fresh produce from trusted local suppliers</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-stat">
+                        <div class="stat-icon">
+                            <i class="fas fa-tractor"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>25+ Partner Farms</h4>
+                            <p>Direct from farms in Cavite and nearby provinces</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-stat">
+                        <div class="stat-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>100% Fresh & Local</h4>
+                            <p>Supporting sustainable agriculture and local economy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-header">
+                        <h3>Do you have any problems or want to report an issue?</h3>
+                        <p>We're here to help! Contact us through any of the following channels:</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email:</strong>
+                            <span>info@tanza-market-monitor.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone:</strong>
+                            <span>+63 919 123 4567</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location:</strong>
+                            <span>Tanza Public Market, Cavite, Philippines</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Market Hours:</strong>
+                            <span>5:00 AM - 8:00 PM Daily</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-info">
+                    <h3>About Us</h3>
+                    <p class="about-description">
+                        <strong>Tanza Public Market</strong> is your trusted source for real-time agricultural pricing and market information. We connect local farmers, vendors, and consumers through transparent pricing and fresh produce availability.
+                    </p>
+                    <div class="about-mission">
+                        <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
+                        <p>To empower the agricultural community by providing accessible market data, promoting fair pricing, and supporting sustainable local farming practices.</p>
+                    </div>
+                    <div class="about-values">
+                        <h4><i class="fas fa-heart"></i> Our Values</h4>
+                        <ul>
+                            <li><strong>Transparency:</strong> Real-time, accurate market pricing</li>
+                            <li><strong>Community:</strong> Supporting local farmers and vendors</li>
+                            <li><strong>Sustainability:</strong> Promoting eco-friendly agriculture</li>
+                            <li><strong>Quality:</strong> Fresh, locally-sourced products</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login/Signup Modal -->
+    <div id="authModal" class="auth-modal">
+        <div class="auth-modal-content">
+            <span class="auth-close" id="authModalClose">&times;</span>
+            
+            <!-- Modal Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" id="loginTab">LOGIN</button>
+                <button class="auth-tab-btn" id="signupTab">SIGN UP</button>
+            </div>
+            
+            <!-- Login Form -->
+            <div class="auth-form-container" id="loginForm">
+                <h2>Welcome Back!</h2>
+                <p class="auth-subtitle">Sign in to access your market dashboard</p>
+                
+                <form class="auth-form" id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" name="email" class="auth-input" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="password" class="auth-input" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="auth-btn primary">Sign In</button>
+                    
+                    <div class="auth-divider">
+                        <span>or continue with</span>
+                    </div>
+                    
+                    <div class="social-login">
+                        <button type="button" class="social-btn google">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                        <button type="button" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Signup Form -->
+            <div class="auth-form-container hidden" id="signupForm">
+                <h2>Join Our Community!</h2>
+                <p class="auth-subtitle">Create an account to track your favorite deals</p>
+                
+                <form class="auth-form" id="signupFormElement" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" class="auth-input" placeholder="First name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" class="auth-input" placeholder="Last name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address</label>
+                        <input type="email" id="signupEmail" name="email" class="auth-input" placeholder="Enter your email (Gmail or Yahoo only)" required>
+                        <small id="emailValidation" style="color: #dc3545; font-size: 0.85rem; margin-top: 0.25rem; display: none;">
+                            Please use a Gmail or Yahoo email address
+                        </small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <div style="position: relative;">
+                            <input type="password" id="signupPassword" name="password" class="auth-input" placeholder="Create a password" required>
+                            <i class="fas fa-eye" id="togglePassword" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #666;"></i>
+                        </div>
+                        <div id="passwordStrength" style="margin-top: 10px; display: none;">
+                            <div style="margin-bottom: 8px;">
+                                <div style="height: 4px; background: #e0e0e0; border-radius: 2px; overflow: hidden;">
+                                    <div id="strengthBar" style="height: 100%; width: 0%; transition: all 0.3s;"></div>
+                                </div>
+                                <span id="strengthText" style="font-size: 0.85rem; font-weight: 600; margin-top: 5px; display: block;"></span>
+                            </div>
+                            <div style="font-size: 0.85rem; color: #666;">
+                                <div style="margin-bottom: 5px; font-weight: 600;">Password must contain:</div>
+                                <div id="checkMinLength" style="display: flex; align-items: center; margin-bottom: 3px;">
+                                    <i class="fas fa-circle" style="font-size: 6px; margin-right: 8px; color: #dc3545;"></i>
+                                    <span>At least 8 characters</span>
+                                </div>
+                                <div id="checkUppercase" style="display: flex; align-items: center; margin-bottom: 3px;">
+                                    <i class="fas fa-circle" style="font-size: 6px; margin-right: 8px; color: #dc3545;"></i>
+                                    <span>One uppercase letter</span>
+                                </div>
+                                <div id="checkLowercase" style="display: flex; align-items: center; margin-bottom: 3px;">
+                                    <i class="fas fa-circle" style="font-size: 6px; margin-right: 8px; color: #dc3545;"></i>
+                                    <span>One lowercase letter</span>
+                                </div>
+                                <div id="checkNumber" style="display: flex; align-items: center; margin-bottom: 3px;">
+                                    <i class="fas fa-circle" style="font-size: 6px; margin-right: 8px; color: #dc3545;"></i>
+                                    <span>One number</span>
+                                </div>
+                                <div id="checkSpecial" style="display: flex; align-items: center;">
+                                    <i class="fas fa-circle" style="font-size: 6px; margin-right: 8px; color: #dc3545;"></i>
+                                    <span>One special character (!@#$%^&*)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="auth-input" placeholder="Confirm your password" required>
+                        <small id="passwordMatch" style="font-size: 0.85rem; margin-top: 0.25rem; display: none;"></small>
+                    </div>
+                    
+                    <div class="form-group" id="otpSection" style="display: none;">
+                        <label for="otpCode">Verification Code</label>
+                        <input type="text" id="otpCode" name="otpCode" class="auth-input" placeholder="Enter 6-digit code" maxlength="6">
+                        <small style="color: #27ae60; font-size: 0.85rem; margin-top: 0.25rem; display: block;">
+                            A verification code has been sent to your email
+                        </small>
+                        <button type="button" id="resendOTP" class="btn-link" style="margin-top: 10px; font-size: 0.85rem; color: #27ae60; border: none; background: none; cursor: pointer; text-decoration: underline;">
+                            Resend Code
+                        </button>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a>
+                        </label>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            Send me market updates and price alerts
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="auth-btn primary">Create Account</button>
+                    
+                    <div class="auth-divider">
+                        <span>or sign up with</span>
+                    </div>
+                    
+                    <div class="social-login">
+                        <button type="button" class="social-btn google">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                        <button type="button" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/price-data.js"></script>
+    <script src="../JS/landingtrial.js"></script>
+    <script src="../JS/carousel.js"></script>
+    <script src="../JS/notification-sync.js"></script>
+    <script src="../JS/signup-validation.js"></script>
+    <script src="../JS/auth-integration.js"></script>
+    <script src="../JS/weather-api.js"></script>
+</body>
+</html>

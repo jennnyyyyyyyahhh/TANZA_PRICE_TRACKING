@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commodity Price Dashboard - Tanza Public Market</title>
+    <link rel="stylesheet" href="../CSS/pricefront.css">
+    <link rel="stylesheet" href="../CSS/export-modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                
+                <!-- Logo Left Side -->
+                <a href="pricefront.html" class="logo">
+                    <i class="fas fa-seedling"></i>
+                    <span>Tanza Public Market</span>
+                </a>
+                
+                <!-- Navigation Center -->
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="landingtrial.html" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#weather" class="nav-link">WEATHER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#about" class="nav-link">ABOUT</a>
+                    </li>
+                </ul>
+                
+                <!-- Right Side Actions -->
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">3</span>
+                        <!-- Notification Dropdown -->
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Market Price Alerts</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Rice Prices - Cavite Market</strong></p>
+                                    <small>Now ₱48/kg (was ₱55/kg) - Save 13% at Local Suppliers</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Fresh Vegetables - Morning Market</strong></p>
+                                    <small>Now ₱35/kg (was ₱45/kg) - Fresh delivery from Tagaytay</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-bell price-alert"></i>
+                                <div class="notification-content">
+                                    <p><strong>Seasonal Fruits - Limited Stock</strong></p>
+                                    <small>₱85/kg - Premium mangoes available at Public Market</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Login/Signup Button -->
+                    <a href="login.html" class="btn-login">LOGIN / SIGNUP</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h1 class="page-title">Commodity Price</h1>
+            <p class="page-subtitle">Choose Category</p>
+        </div>
+
+        <div class="category-grid">
+            <!-- Rice & Grains Category -->
+            <div class="category-card" onclick="selectCategory('rice-grains')" tabindex="0" role="button" aria-label="Rice and Grains category">
+                <img src="../IMG/rice-grains.jpg" alt="Rice and Grains" class="category-image" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik02MCA0MEM2OCA0MCA3NCA0NiA3NCA1NFY2NkM3NCA3NCA2OCA4MCA2MCA4MEg1MkM0NCA4MCAzOCA3NCAzOCA2NlY1NEMzOCA0NiA0NCA0MCA1MiA0MEg2MFoiIGZpbGw9IiNEQ0RDREMiLz4KPHRleHQgeD0iNjAiIHk9IjEwMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SaWNlICZhbXA7IEdyYWluczwvdGV4dD4KPC9zdmc+'">
+                <h3 class="category-name">Rice & Grains</h3>
+               
+            </div>
+
+            <!-- Vegetables Category -->
+            <div class="category-card" onclick="selectCategory('vegetables')" tabindex="0" role="button" aria-label="Vegetables category">
+                <img src="../IMG/vegetables.jpg" alt="Fresh Vegetables" class="category-image"
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjIwIiBmaWxsPSIjNENBRjUwIi8+Cjx0ZXh0IHg9IjYwIiB5PSIxMDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VmVnZXRhYmxlczwvdGV4dD4KPC9zdmc+'" >
+                <h3 class="category-name">Vegetables</h3>
+            </div>
+
+            <!-- Fruits Category -->
+            <div class="category-card" onclick="selectCategory('fruits')" tabindex="0" role="button" aria-label="Fruits category">
+                <img src="../IMG/fruits.jpg" alt="Fresh Fruits" class="category-image"
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjIwIiBmaWxsPSIjRkY5ODAwIi8+Cjx0ZXh0IHg9IjYwIiB5PSIxMDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RnJ1aXRzPC90ZXh0Pgo8L3N2Zz4='" >
+                <h3 class="category-name">Fruits</h3>
+            </div>
+
+            <!-- Meat and Poultry Category -->
+            <div class="category-card" onclick="selectCategory('meat-poultry')" tabindex="0" role="button" aria-label="Meat and Poultry category">
+                <img src="../IMG/meat-poultry.jpg" alt="Meat and Poultry" class="category-image"
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRjVGNUY1Ii8+CjxyZWN0IHg9IjQwIiB5PSI0MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iNSIgZmlsbD0iI0Q3MzUyNyIvPgo8dGV4dCB4PSI2MCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1lYXQgJmFtcDsgUG91bHRyeTwvdGV4dD4KPC9zdmc+'" >
+                <h3 class="category-name">Meat and Poultry</h3>
+            </div>
+
+            <!-- Fish Category -->
+            <div class="category-card" onclick="selectCategory('fish')" tabindex="0" role="button" aria-label="Fish and Seafood category">
+                <img src="../IMG/fish-seafood.jpg" alt="Fish and Seafood" class="category-image"
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSI2MCIgY3k9IjYwIiByeD0iMjUiIHJ5PSIxNSIgZmlsbD0iIzIxOTZGMyIvPgo8dGV4dCB4PSI2MCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkZpc2g8L3RleHQ+Cjwvc3ZnPg=='" >
+                <h3 class="category-name">Fish</h3>
+            </div>
+
+            <!-- Other Category -->
+            <div class="category-card" onclick="selectCategory('other')" tabindex="0" role="button" aria-label="Other products category">
+                <img src="../IMG/other-products.jpg" alt="Other Products" class="category-image"
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRjVGNUY1Ii8+CjxyZWN0IHg9IjQ1IiB5PSI0NSIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iNSIgZmlsbD0iIzlDMjdCMCIvPgo8dGV4dCB4PSI2MCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk90aGVyPC90ZXh0Pgo8L3N2Zz4='" >
+                <h3 class="category-name">Other</h3>
+            </div>
+        </div>
+
+        <!-- Action Buttons Section -->
+        <div class="action-buttons-section">
+            <a href="export-data.html" class="action-btn pdf-btn">
+                <i class="fas fa-download"></i>
+                <span>Export Data</span>
+            </a>
+            <button class="action-btn report-btn" id="reportOverpriceBtn">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Click here to Report</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- Report Overpricing Modal -->
+    <div class="modal" id="reportModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            
+            <!-- Step 1: Email Verification -->
+            <div class="modal-step" id="step1">
+                <h2>Report </h2>
+                <p class="modal-description">Help us maintain fair prices in the market by reporting overpriced items and more.</p>
+                <form id="emailForm">
+                    <div class="form-group">
+                        <label for="userEmail">Your Email Address</label>
+                        <input type="email" id="userEmail" required placeholder="Enter your email">
+                        <small>We'll send you a verification code</small>
+                    </div>
+                    <button type="submit" class="modal-btn">Send Verification Code</button>
+                </form>
+            </div>
+
+            <!-- Step 2: OTP Verification -->
+            <div class="modal-step hidden" id="step2">
+                <h2>Verify Email</h2>
+                <p class="modal-description">Enter the 6-digit code sent to <span id="emailDisplay"></span></p>
+                <form id="otpForm">
+                    <div class="form-group">
+                        <div class="otp-inputs">
+                            <input type="text" maxlength="1" class="otp-input" data-index="0">
+                            <input type="text" maxlength="1" class="otp-input" data-index="1">
+                            <input type="text" maxlength="1" class="otp-input" data-index="2">
+                            <input type="text" maxlength="1" class="otp-input" data-index="3">
+                            <input type="text" maxlength="1" class="otp-input" data-index="4">
+                            <input type="text" maxlength="1" class="otp-input" data-index="5">
+                        </div>
+                        <small>Didn't receive code? <a href="#" id="resendOtp">Resend</a></small>
+                    </div>
+                    <button type="submit" class="modal-btn">Verify Code</button>
+                </form>
+            </div>
+
+            <!-- Step 3: Report Form -->
+            <div class="modal-step hidden" id="step3">
+                <h2>Submit Report</h2>
+                <p class="modal-description">Please provide details about the overpricing incident</p>
+                <form id="reportForm">
+                    <div class="form-group">
+                        <label for="stallName">Stall/Vendor Name *</label>
+                        <input type="text" id="stallName" required placeholder="Enter stall or vendor name">
+                    </div>
+                    <div class="form-group">
+                        <label for="itemName">Item Name *</label>
+                        <input type="text" id="itemName" required placeholder="e.g., Rice, Tomatoes">
+                    </div>
+                    <div class="form-group">
+                        <label for="reportedPrice">Reported Price *</label>
+                        <input type="number" id="reportedPrice" required placeholder="₱0.00" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="expectedPrice">Expected/Market Price</label>
+                        <input type="number" id="expectedPrice" placeholder="₱0.00" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description *</label>
+                        <textarea id="description" required placeholder="Describe the issue..." rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="evidencePhoto">Upload Evidence (Photo)</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="evidencePhoto" accept="image/*" class="file-input">
+                            <label for="evidencePhoto" class="file-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span id="fileName">Choose a photo or drag here</span>
+                            </label>
+                            <div id="imagePreview" class="image-preview hidden"></div>
+                        </div>
+                    </div>
+                    <div class="form-note">
+                        <i class="fas fa-info-circle"></i>
+                        <span>You can submit 1 report per day per email address</span>
+                    </div>
+                    <button type="submit" class="modal-btn">Submit Report</button>
+                </form>
+            </div>
+
+            <!-- Success Message -->
+            <div class="modal-step hidden" id="successStep">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Report Submitted!</h2>
+                <p class="modal-description">Thank you for helping us maintain fair market prices. We'll review your report shortly.</p>
+                <button class="modal-btn" id="closeSuccess">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Price Data Modal -->
+    <div class="modal" id="exportModal">
+        <div class="modal-content">
+            <span class="modal-close" id="exportModalClose">&times;</span>
+            <h2>Export Price Data</h2>
+            
+            <div class="form-group">
+                <label>Date Range</label>
+                <div class="date-range-group">
+                    <div class="date-input-wrapper">
+                        <label for="startDate">From</label>
+                        <input type="date" id="startDate" name="startDate" required>
+                    </div>
+                    <div class="date-input-wrapper">
+                        <label for="endDate">To</label>
+                        <input type="date" id="endDate" name="endDate" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Include in Report</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="include" value="all-stores" checked> All Stores</label>
+                    <label><input type="checkbox" name="include" value="price-trends"> Price Trends</label>
+                    <label><input type="checkbox" name="include" value="price-comparison"> Price Comparison</label>
+                    <label><input type="checkbox" name="include" value="charts-graphs"> Charts & Graphs</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>File Format</label>
+                <div class="file-format-group">
+                    <div class="file-format-option" data-format="pdf">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>PDF</span>
+                    </div>
+                    <div class="file-format-option" data-format="excel">
+                        <i class="fas fa-file-excel"></i>
+                        <span>Excel</span>
+                    </div>
+                    <div class="file-format-option" data-format="csv">
+                        <i class="fas fa-file-csv"></i>
+                        <span>CSV</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="modal-btn" id="generateReportBtn">Generate & Download Report</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="../JS/pricefront.js"></script>
+    <script src="../JS/notification-sync.js"></script>
+    <script src="../JS/export-modal.js"></script>
+</body>
+</html>

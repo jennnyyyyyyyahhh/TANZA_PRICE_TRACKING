@@ -1,0 +1,703 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Survey Form - Tanza Public Market</title>
+    <link rel="stylesheet" href="../CSS/minimalist-responsive.css">
+    <link rel="stylesheet" href="../CSS/admin-dashboard.css">
+    <link rel="stylesheet" href="../CSS/admin-dashboard-responsive.css">
+    <link rel="stylesheet" href="../CSS/notification-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../JS/disable-console-logs.js"></script>
+    <script src="../JS/disable-all-notifications.js"></script>
+    <script src="../JS/disable-login-requirements.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <div class="logo">
+                    <a href="pricefront.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-seedling"></i>
+                        <span class="logo-text">Tanza Public Market</span>
+                    </a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="landingtrial.html" class="nav-link">HOME</a></li>
+                    <li class="nav-item"><a href="landingtrial.html#weather" class="nav-link">WEATHER</a></li>
+                    <li class="nav-item"><a href="landingtrial.html#about" class="nav-link">ABOUT</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">5</span>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Market Price Alerts</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Fresh Tomatoes</strong></p>
+                                    <small>Now ₱65/kg (was ₱85/kg)</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-account-container" id="headerAccountContainer">
+                        <a href="#profile" class="btn-user-account" id="adminAccountBtn">
+                            <i class="fas fa-user-shield"></i>
+                            <span id="headerUserName">Admin</span>
+                        </a>
+                        <div class="account-dropdown" id="accountDropdown">
+                            <div class="account-dropdown-header">
+                                <div class="account-avatar"><i class="fas fa-user-shield"></i></div>
+                                <div class="account-user-info">
+                                    <h3>Admin User</h3>
+                                    <p>admin@farmfreshmarket.com</p>
+                                    <span class="user-type">Administrator</span>
+                                </div>
+                            </div>
+                            <div class="account-menu">
+                                <a href="#" class="account-menu-item" data-action="profile"><i class="fas fa-user-shield"></i><span>ADMIN PROFILE</span></a>
+                                <a href="#" class="account-menu-item" data-action="settings"><i class="fas fa-cog"></i><span>SYSTEM SETTINGS</span></a>
+                                <a href="#" class="account-menu-item logout" data-action="logout"><i class="fas fa-sign-out-alt"></i><span>LOGOUT</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle sidebar menu">
+        <i class="fas fa-bars"></i>
+        <span>Menu</span>
+    </button>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Admin Panel</span>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                                <ul class="nav-list">
+                    <li class="nav-item"><a href="admin-dashboard.html" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>DASHBOARD</span></a></li>
+                    <li class="nav-item"><a href="admin-vendor-management.html" class="nav-link"><i class="fas fa-users"></i><span>VENDOR MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-survey-form.html" class="nav-link"><i class="fas fa-clipboard-list"></i><span>SUBMIT SURVEY FORM</span></a></li>
+                    <li class="nav-item"><a href="admin-report-management.html" class="nav-link"><i class="fas fa-exclamation-triangle"></i><span>REPORT MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-cleaning-management.html" class="nav-link"><i class="fas fa-broom"></i><span>CLEANING MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-vendor-requests.html" class="nav-link"><i class="fas fa-file-alt"></i><span>VENDOR REQUESTS</span></a></li>
+                    <li class="nav-item"><a href="admin-stall-management.html" class="nav-link"><i class="fas fa-store"></i><span>STALL MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-business-permit.html" class="nav-link"><i class="fas fa-certificate"></i><span>BUSINESS PERMIT</span></a></li>
+                    <li class="nav-item"><a href="admin-events.html" class="nav-link"><i class="fas fa-calendar-alt"></i><span>EVENTS</span></a></li>
+                    <li class="nav-item"><a href="admin-notices.html" class="nav-link"><i class="fas fa-bullhorn"></i><span>NOTICES</span></a></li>
+                    <li class="nav-item"><a href="admin-notification-management.html" class="nav-link"><i class="fas fa-bell"></i><span>NOTIFICATION MANAGEMENT</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>LOG OUT</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-navbar">
+                <div class="top-nav-left">
+                    <button class="mobile-sidebar-trigger" id="mobileSidebarTrigger" aria-label="Open sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Submit Price Survey</h1>
+                </div>
+                <div class="date-time">
+                    <span id="currentDate">October 23, 2025</span>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <section class="content-section active" id="survey-form-section">
+    <div class="section-header">
+        <h2>Submit Price Survey</h2>
+        <p>Record commodity prices to track market trends.</p>
+    </div>
+    <div class="section-content" id="surveyContent">
+        <div class="survey-form-container">
+            <form id="marketPriceSurveyForm" class="market-survey-form">
+                <div class="form-header">
+                    <div class="form-group">
+                        <label for="surveyDate">Survey Date:</label>
+                        <input type="date" id="surveyDate" name="surveyDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marketLocation">Market Location:</label>
+                        <select id="marketLocation" name="marketLocation" required>
+                            <option value="">Select Barangay</option>
+                            <option value="amaya-1">Amaya I</option>
+                            <option value="amaya-2">Amaya II</option>
+                            <option value="amaya-3">Amaya III</option>
+                            <option value="amaya-4">Amaya IV</option>
+                            <option value="amaya-5">Amaya V</option>
+                            <option value="amaya-6">Amaya VI</option>
+                            <option value="amaya-7">Amaya VII</option>
+                            <option value="amaya-8">Amaya VIII</option>
+                            <option value="amaya-9">Amaya IX</option>
+                            <option value="amaya-10">Amaya X</option>
+                            <option value="amaya-11">Amaya XI</option>
+                            <option value="bagtas">Bagtas</option>
+                            <option value="biga">Biga</option>
+                            <option value="bucal">Bucal</option>
+                            <option value="bunducan">Bunducan</option>
+                            <option value="capipisa">Capipisa</option>
+                            <option value="daang-amaya-1">Daang Amaya I</option>
+                            <option value="daang-amaya-2">Daang Amaya II</option>
+                            <option value="daang-amaya-3">Daang Amaya III</option>
+                            <option value="halayhay">Halayhay</option>
+                            <option value="julugan-1">Julugan I</option>
+                            <option value="julugan-2">Julugan II</option>
+                            <option value="julugan-3">Julugan III</option>
+                            <option value="julugan-4">Julugan IV</option>
+                            <option value="julugan-5">Julugan V</option>
+                            <option value="julugan-6">Julugan VI</option>
+                            <option value="julugan-7">Julugan VII</option>
+                            <option value="julugan-8">Julugan VIII</option>
+                            <option value="lambingan">Lambingan</option>
+                            <option value="muzon">Muzon</option>
+                            <option value="pasong-langka">Pasong Langka</option>
+                            <option value="poblacion-1">Poblacion I</option>
+                            <option value="poblacion-2">Poblacion II</option>
+                            <option value="poblacion-3">Poblacion III</option>
+                            <option value="poblacion-4">Poblacion IV</option>
+                            <option value="sahud-ulan">Sahud-Ulan</option>
+                            <option value="santol">Santol</option>
+                            <option value="tres-cruses">Tres Cruses</option>
+                            <option value="vibora">Vibora</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="vendorName">Vendor Name:</label>
+                        <input type="text" id="vendorName" name="vendorName" placeholder="Enter vendor name">
+                    </div>
+                    <div class="form-group">
+                        <label for="surveyType">Survey Type:</label>
+                        <select id="surveyType" name="surveyType" required>
+                            <option value="weekly">Weekly Price Survey</option>
+                            <option value="monthly">Monthly Price Survey</option>
+                            <option value="special">Special Event Survey</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="commodity-category">
+                    <h3>Rice & Grains</h3>
+                    <div class="commodity-items" id="riceItems">
+                        <div class="commodity-item">
+                            <div class="item-header">
+                                <div class="item-name">
+                                    <label>Rice Type:</label>
+                                    <select class="commodity-select" required>
+                                        <option value="">Select Rice Type</option>
+                                        <option value="nfa-regular-milled">NFA (Regular Milled)</option>
+                                        <option value="nfa-well-milled">NFA (Well Milled)</option>
+                                        <option value="special-blue-tag">Special (Blue Tag)</option>
+                                        <option value="premium-yellow-tag">Premium (Yellow Tag)</option>
+                                        <option value="well-milled-white-tag">Well Milled (White Tag)</option>
+                                        <option value="regular-milled-white-tag">Regular Milled (White Tag)</option>
+                                    </select>
+                                </div>
+                                <div class="item-variant">
+                                    <input type="text" placeholder="Brand/Variety (optional)" class="variant-input">
+                                </div>
+                                <div class="remove-item">
+                                    <button type="button" class="remove-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="item-details">
+                                <div class="price-input">
+                                    <label>Price ($\text{₱}$):</label>
+                                    <input type="number" min="0" step="0.01" placeholder="0.00" class="price-field" required>
+                                </div>
+                                <div class="quantity-input">
+                                    <label>Quantity Unit:</label>
+                                    <select class="unit-select">
+                                        <option value="per-kilo">Per Kilo</option>
+                                        <option value="per-sack-25kg">Per Sack (25kg)</option>
+                                        <option value="per-sack-50kg">Per Sack (50kg)</option>
+                                        <option value="per-ganta">Per Ganta</option>
+                                    </select>
+                                </div>
+                                <div class="quality-input">
+                                    <label>Quality:</label>
+                                    <select class="quality-select">
+                                        <option value="excellent">Excellent</option>
+                                        <option value="good" selected>Good</option>
+                                        <option value="average">Average</option>
+                                        <option value="poor">Poor</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="item-notes">
+                                <label>Notes:</label>
+                                <textarea placeholder="Additional notes about this item"></textarea>
+                            </div>
+                            <div class="item-picture-upload">
+                                <label>Picture (Optional):</label>
+                                <div class="picture-upload-container">
+                                    <input type="file" class="picture-input" accept="image/*" style="display: none;">
+                                    <button type="button" class="upload-picture-btn">
+                                        <i class="fas fa-camera"></i> Upload Picture
+                                    </button>
+                                    <div class="picture-preview" style="display: none;">
+                                        <img class="preview-image" src="" alt="Commodity Picture" style="max-width: 200px; max-height: 200px; border-radius: 8px;">
+                                        <button type="button" class="remove-picture-btn">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <small class="picture-help-text">Optional: Add a picture of your commodity</small>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    <button type="button" class="add-item-btn" data-category="rice">
+                        <i class="fas fa-plus"></i> Add Another Rice/Grain
+                    </button>
+                </div>
+
+                ---
+
+                <div class="commodity-category">
+                    <h3>Vegetables</h3>
+                    <div class="commodity-items" id="vegetableItems">
+                        <div class="commodity-item">
+                            <div class="item-header">
+                                <div class="item-name">
+                                    <label>Vegetable Type:</label>
+                                    <select class="commodity-select" required>
+                                        <option value="">Select Vegetable</option>
+                                        <optgroup label="Lowland Vegetables">
+                                            <option value="ampalaya">Ampalaya (Bitter Gourd)</option>
+                                            <option value="sitao">Sitao (String Beans)</option>
+                                            <option value="petchay-native">Petchay (Native)</option>
+                                            <option value="squash">Squash</option>
+                                            <option value="eggplant">Eggplant</option>
+                                            <option value="tomato">Tomato</option>
+                                            <option value="upo">Upo (Bottle Gourd)</option>
+                                            <option value="okra">Okra</option>
+                                            <option value="radish">Radish</option>
+                                        </optgroup>
+                                        <optgroup label="Highland Vegetables">
+                                            <option value="cabbage-scorpio">Cabbage (Scorpio)</option>
+                                            <option value="carrots">Carrots</option>
+                                            <option value="habitchuelas">Habitchuelas (Baguio Beans)</option>
+                                            <option value="petchay-baguio">Petchay (Baguio)</option>
+                                            <option value="chayote">Chayote</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="item-variant">
+                                    <input type="text" placeholder="Variety (optional)" class="variant-input">
+                                </div>
+                                <div class="remove-item">
+                                    <button type="button" class="remove-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="item-details">
+                                <div class="price-input">
+                                    <label>Price ($\text{₱}$):</label>
+                                    <input type="number" min="0" step="0.01" placeholder="0.00" class="price-field" required>
+                                </div>
+                                <div class="quantity-input">
+                                    <label>Quantity Unit:</label>
+                                    <select class="unit-select">
+                                        <option value="per-kilo">Per Kilo</option>
+                                        <option value="per-piece">Per Piece</option>
+                                        <option value="per-bundle">Per Bundle</option>
+                                        <option value="per-sack">Per Sack</option>
+                                    </select>
+                                </div>
+                                <div class="quality-input">
+                                    <label>Quality:</label>
+                                    <select class="quality-select">
+                                        <option value="excellent">Excellent</option>
+                                        <option value="good" selected>Good</option>
+                                        <option value="average">Average</option>
+                                        <option value="poor">Poor</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="item-notes">
+                                <label>Notes:</label>
+                                <textarea placeholder="Additional notes about this item"></textarea>
+                            </div>
+                            <div class="item-picture-upload">
+                                <label>Picture (Optional):</label>
+                                <div class="picture-upload-container">
+                                    <input type="file" class="picture-input" accept="image/*" style="display: none;">
+                                    <button type="button" class="upload-picture-btn">
+                                        <i class="fas fa-camera"></i> Upload Picture
+                                    </button>
+                                    <div class="picture-preview" style="display: none;">
+                                        <img class="preview-image" src="" alt="Commodity Picture" style="max-width: 200px; max-height: 200px; border-radius: 8px;">
+                                        <button type="button" class="remove-picture-btn">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <small class="picture-help-text">Optional: Add a picture of your commodity</small>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    <button type="button" class="add-item-btn" data-category="vegetable">
+                        <i class="fas fa-plus"></i> Add Another Vegetable
+                    </button>
+                </div>
+
+                ---
+
+                <div class="commodity-category">
+                    <h3>Fruits</h3>
+                    <div class="commodity-items" id="fruitItems">
+                        <div class="commodity-item">
+                            <div class="item-header">
+                                <div class="item-name">
+                                    <label>Fruit Type:</label>
+                                    <select class="commodity-select" required>
+                                        <option value="">Select Fruit</option>
+                                        <option value="calamansi">Calamansi</option>
+                                        <option value="banana-lakatan">Banana (Lakatan)</option>
+                                        <option value="banana-latundan">Banana (Latundan)</option>
+                                        <option value="papaya">Papaya</option>
+                                        <option value="watermelon">Watermelon</option>
+                                        <option value="melon">Melon</option>
+                                        <option value="mango-carabao">Mango (Carabao)</option>
+                                    </select>
+                                </div>
+                                <div class="item-variant">
+                                    <input type="text" placeholder="Variety (optional)" class="variant-input">
+                                </div>
+                                <div class="remove-item">
+                                    <button type="button" class="remove-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="item-details">
+                                <div class="price-input">
+                                    <label>Price ($\text{₱}$):</label>
+                                    <input type="number" min="0" step="0.01" placeholder="0.00" class="price-field" required>
+                                </div>
+                                <div class="quantity-input">
+                                    <label>Quantity Unit:</label>
+                                    <select class="unit-select">
+                                        <option value="per-kilo">Per Kilo</option>
+                                        <option value="per-piece">Per Piece</option>
+                                        <option value="per-dozen">Per Dozen</option>
+                                        <option value="per-box">Per Box</option>
+                                    </select>
+                                </div>
+                                <div class="quality-input">
+                                    <label>Quality:</label>
+                                    <select class="quality-select">
+                                        <option value="excellent">Excellent</option>
+                                        <option value="good" selected>Good</option>
+                                        <option value="average">Average</option>
+                                        <option value="poor">Poor</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="item-notes">
+                                <label>Notes:</label>
+                                <textarea placeholder="Additional notes about this item"></textarea>
+                            </div>
+                            <div class="item-picture-upload">
+                                <label>Picture (Optional):</label>
+                                <div class="picture-upload-container">
+                                    <input type="file" class="picture-input" accept="image/*" style="display: none;">
+                                    <button type="button" class="upload-picture-btn">
+                                        <i class="fas fa-camera"></i> Upload Picture
+                                    </button>
+                                    <div class="picture-preview" style="display: none;">
+                                        <img class="preview-image" src="" alt="Commodity Picture" style="max-width: 200px; max-height: 200px; border-radius: 8px;">
+                                        <button type="button" class="remove-picture-btn">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <small class="picture-help-text">Optional: Add a picture of your commodity</small>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    <button type="button" class="add-item-btn" data-category="fruit">
+                        <i class="fas fa-plus"></i> Add Another Fruit
+                    </button>
+                </div>
+
+                ---
+
+                <div class="commodity-category">
+                    <h3>Meat and Poultry</h3>
+                    <div class="commodity-items" id="meatItems">
+                        <div class="commodity-item">
+                            <div class="item-header">
+                                <div class="item-name">
+                                    <label>Meat/Poultry Type:</label>
+                                    <select class="commodity-select" required>
+                                        <option value="">Select Item</option>
+                                        <option value="beef-rump">Beef Rump</option>
+                                        <option value="beef-brisket">Beef Brisket</option>
+                                        <option value="pork-ham">Pork Ham/Kasim</option>
+                                        <option value="pork-liempo">Pork Liempo (Belly)</option>
+                                        <option value="whole-chicken">Whole Chicken</option>
+                                        <option value="chicken-egg">Chicken Egg</option>
+                                    </select>
+                                </div>
+                                <div class="item-variant">
+                                    <input type="text" placeholder="Cut/Brand (optional)" class="variant-input">
+                                </div>
+                                <div class="remove-item">
+                                    <button type="button" class="remove-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="item-details">
+                                <div class="price-input">
+                                    <label>Price ($\text{₱}$):</label>
+                                    <input type="number" min="0" step="0.01" placeholder="0.00" class="price-field" required>
+                                </div>
+                                <div class="quantity-input">
+                                    <label>Quantity Unit:</label>
+                                    <select class="unit-select">
+                                        <option value="per-kilo">Per Kilo</option>
+                                        <option value="per-piece">Per Piece (for Whole Chicken/Eggs)</option>
+                                        <option value="per-tray">Per Tray (for Eggs)</option>
+                                    </select>
+                                </div>
+                                <div class="quality-input">
+                                    <label>Quality:</label>
+                                    <select class="quality-select">
+                                        <option value="excellent">Excellent</option>
+                                        <option value="good" selected>Good</option>
+                                        <option value="average">Average</option>
+                                        <option value="poor">Poor</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="item-notes">
+                                <label>Notes:</label>
+                                <textarea placeholder="Additional notes about this item"></textarea>
+                            </div>
+                            <div class="item-picture-upload">
+                                <label>Picture (Optional):</label>
+                                <div class="picture-upload-container">
+                                    <input type="file" class="picture-input" accept="image/*" style="display: none;">
+                                    <button type="button" class="upload-picture-btn">
+                                        <i class="fas fa-camera"></i> Upload Picture
+                                    </button>
+                                    <div class="picture-preview" style="display: none;">
+                                        <img class="preview-image" src="" alt="Commodity Picture" style="max-width: 200px; max-height: 200px; border-radius: 8px;">
+                                        <button type="button" class="remove-picture-btn">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <small class="picture-help-text">Optional: Add a picture of your commodity</small>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    <button type="button" class="add-item-btn" data-category="meat">
+                        <i class="fas fa-plus"></i> Add Another Meat/Poultry
+                    </button>
+                </div>
+
+                ---
+
+                <div class="commodity-category">
+                    <h3>Fish</h3>
+                    <div class="commodity-items" id="fishItems">
+                        <div class="commodity-item">
+                            <div class="item-header">
+                                <div class="item-name">
+                                    <label>Fish Type:</label>
+                                    <select class="commodity-select" required>
+                                        <option value="">Select Fish</option>
+                                        <option value="bangus">Bangus (Milkfish)</option>
+                                        <option value="tilapia">Tilapia</option>
+                                        <option value="galunggong-local">Galunggong (Local)</option>
+                                        <option value="galunggong-imported">Galunggong (Imported)</option>
+                                        <option value="alumahan">Alumahan (Mackerel)</option>
+                                        <option value="sapsap">Sapsap (Ponyfish)</option>
+                                        <option value="tamban">Tamban (Sardines)</option>
+                                        <option value="daing-galunggong">Daing na Galunggong (Dried)</option>
+                                        <option value="labahita">Labahita (Surgeonfish)</option>
+                                        <option value="dilis">Dilis (Anchovy)</option>
+                                        <option value="tuyo-salinas">Tuyo (Salinas)</option>
+                                        <option value="tuyo-tamban">Tuyo (Tamban)</option>
+                                    </select>
+                                </div>
+                                <div class="item-variant">
+                                    <input type="text" placeholder="Size/Condition (optional)" class="variant-input">
+                                </div>
+                                <div class="remove-item">
+                                    <button type="button" class="remove-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="item-details">
+                                <div class="price-input">
+                                    <label>Price ($\text{₱}$):</label>
+                                    <input type="number" min="0" step="0.01" placeholder="0.00" class="price-field" required>
+                                </div>
+                                <div class="quantity-input">
+                                    <label>Quantity Unit:</label>
+                                    <select class="unit-select">
+                                        <option value="per-kilo">Per Kilo</option>
+                                        <option value="per-piece">Per Piece</option>
+                                        <option value="per-bundle">Per Bundle (for small fish/dried)</option>
+                                    </select>
+                                </div>
+                                <div class="quality-input">
+                                    <label>Quality:</label>
+                                    <select class="quality-select">
+                                        <option value="excellent">Excellent</option>
+                                        <option value="good" selected>Good</option>
+                                        <option value="average">Average</option>
+                                        <option value="poor">Poor</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="item-notes">
+                                <label>Notes:</label>
+                                <textarea placeholder="Additional notes about this item"></textarea>
+                            </div>
+                            <div class="item-picture-upload">
+                                <label>Picture (Optional):</label>
+                                <div class="picture-upload-container">
+                                    <input type="file" class="picture-input" accept="image/*" style="display: none;">
+                                    <button type="button" class="upload-picture-btn">
+                                        <i class="fas fa-camera"></i> Upload Picture
+                                    </button>
+                                    <div class="picture-preview" style="display: none;">
+                                        <img class="preview-image" src="" alt="Commodity Picture" style="max-width: 200px; max-height: 200px; border-radius: 8px;">
+                                        <button type="button" class="remove-picture-btn">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <small class="picture-help-text">Optional: Add a picture of your commodity</small>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    <button type="button" class="add-item-btn" data-category="fish">
+                        <i class="fas fa-plus"></i> Add Another Fish
+                    </button>
+                </div>
+
+                ---
+
+                <div class="commodity-category">
+                    <h3>Other Basic Commodities</h3>
+                    <div class="commodity-items" id="otherItems">
+                        <div class="commodity-item">
+                            <div class="item-header">
+                                <div class="item-name">
+                                    <label>Commodity:</label>
+                                    <select class="commodity-select" required>
+                                        <option value="">Select Commodity</option>
+                                        <option value="sugar-refined">Sugar, Refined</option>
+                                        <option value="sugar-washed">Sugar, Washed</option>
+                                        <option value="sugar-brown-raw">Sugar, Brown (Raw)</option>
+                                        <option value="cooking-oil-350ml">Cooking oil, Palm (350ml)</option>
+                                        <option value="cooking-oil-1liter">Cooking oil, Palm (1 Liter)</option>
+                                    </select>
+                                </div>
+                                <div class="item-variant">
+                                    <input type="text" placeholder="Brand/Variant (optional)" class="variant-input">
+                                </div>
+                                <div class="remove-item">
+                                    <button type="button" class="remove-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="item-details">
+                                <div class="price-input">
+                                    <label>Price ($\text{₱}$):</label>
+                                    <input type="number" min="0" step="0.01" placeholder="0.00" class="price-field" required>
+                                </div>
+                                <div class="quantity-input">
+                                    <label>Quantity Unit:</label>
+                                    <select class="unit-select">
+                                        <option value="per-kilo">Per Kilo (for sugar)</option>
+                                        <option value="per-bottle">Per Bottle (for oil)</option>
+                                        <option value="per-bag">Per Bag/Sack (for bulk sugar)</option>
+                                    </select>
+                                </div>
+                                <div class="quality-input">
+                                    <label>Quality:</label>
+                                    <select class="quality-select">
+                                        <option value="excellent">Excellent</option>
+                                        <option value="good" selected>Good</option>
+                                        <option value="average">Average</option>
+                                        <option value="poor">Poor</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="item-notes">
+                                <label>Notes:</label>
+                                <textarea placeholder="Additional notes about this item"></textarea>
+                            </div>
+                            <div class="item-picture-upload">
+                                <label>Picture (Optional):</label>
+                                <div class="picture-upload-container">
+                                    <input type="file" class="picture-input" accept="image/*" style="display: none;">
+                                    <button type="button" class="upload-picture-btn">
+                                        <i class="fas fa-camera"></i> Upload Picture
+                                    </button>
+                                    <div class="picture-preview" style="display: none;">
+                                        <img class="preview-image" src="" alt="Commodity Picture" style="max-width: 200px; max-height: 200px; border-radius: 8px;">
+                                        <button type="button" class="remove-picture-btn">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <small class="picture-help-text">Optional: Add a picture of your commodity</small>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    <button type="button" class="add-item-btn" data-category="other">
+                        <i class="fas fa-plus"></i> Add Another Commodity
+                    </button>
+                </div>
+
+                ---
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Submit Survey
+                    </button>
+                    <button type="reset" class="btn-secondary">
+                        <i class="fas fa-redo"></i> Reset Form
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+            </div>
+        </main>
+    </div>
+
+    <script src="../JS/admin-sidebar.js"></script>
+    <script src="../JS/admin-dashboard.js"></script>
+</body>
+</html>

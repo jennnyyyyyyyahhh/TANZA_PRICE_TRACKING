@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetables - Tanza Public Market</title>
+    <link rel="stylesheet" href="../CSS/vegetables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Left Side -->
+                <div class="logo">
+                    <a href="pricefront.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-seedling"></i>
+                        <span>Tanza Public Market</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Hamburger Menu -->
+                <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Navigation Center -->
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="landingtrial.html" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#weather" class="nav-link">WEATHER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#about" class="nav-link">ABOUT</a>
+                    </li>
+                </ul>
+                
+                <!-- Right Side Actions -->
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">3</span>
+                        <!-- Notification Dropdown -->
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Market Price Alerts</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Fresh Tomatoes - Tanza Market</strong></p>
+                                    <small>Now ₱65/kg (was ₱85/kg) - Save 24% at Maria's Farm</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Local Rice - Farmer's Direct</strong></p>
+                                    <small>Now ₱48/kg (was ₱55/kg) - Save 13% from Laguna Farms</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-bell price-alert"></i>
+                                <div class="notification-content">
+                                    <p><strong>Organic Apples - Limited Stock</strong></p>
+                                    <small>₱95/kg - Only 10kg left at Public Market</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Ripe Bananas - Morning Harvest</strong></p>
+                                    <small>Now ₱35/kg (was ₱45/kg) - Fresh from Batangas Farms</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Carrots - Bulk Discount</strong></p>
+                                    <small>Now ₱50/kg (was ₱65/kg) - Highland Vegetables</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Login/Signup Button -->
+                    <a href="login.html" class="btn-login">LOGIN / SIGNUP</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="search products" id="searchInput">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <!-- Back Button -->
+            <div class="back-button-container">
+                <a href="pricefront.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Title -->
+        <div class="page-header">
+            <h1 class="page-title">Vegetables</h1>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+            <!-- Ampalaya -->
+            <div class="product-card" data-product="ampalaya">
+                <div class="product-image">
+                    <img src="../IMG/tomato.jpg" alt="Tomato" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iNjAiIGZpbGw9IiNGRjYzNDciLz4KPHRleHQgeD0iMTAwIiB5PSIxODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VG9tYXRvPC90ZXh0Pgo8L3N2Zz4='>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Ampalaya</h3>
+                </div>
+            </div>
+
+            <!-- Sitaw -->
+            <div class="product-card" data-product="upo">
+                <div class="product-image">
+                    <img src="../IMG/upo.jpg" alt="Upo" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI0MCIgcnk9IjcwIiBmaWxsPSIjOEJDMzRBIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlVwbzwvdGV4dD4KPC9zdmc+'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Sitaw</h3>
+                </div>
+            </div>
+
+            <!-- Pechay -->
+            <div class="product-card" data-product="okra">
+                <div class="product-image">
+                    <img src="../IMG/okra.jpg" alt="Okra" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxyZWN0IHg9IjgwIiB5PSI0MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjEyMCIgcng9IjIwIiBmaWxsPSIjNjhBMzI4Ii8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk9rcmE8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Pechay</h3>
+                </div>
+            </div>
+
+            <!-- Squash -->
+            <div class="product-card" data-product="radish">
+                <div class="product-image">
+                    <img src="../IMG/radish.jpg" alt="Radish" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMjAiIHJ4PSIzNSIgcnk9IjYwIiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNEREQiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSI5MCIgeT0iNDAiIHdpZHRoPSIyMCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzRDQUY1MCIvPgo8dGV4dCB4PSIxMDAiIHk9IjE4MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SYWRpc2g8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Squash</h3>
+                </div>
+            </div>
+
+            <!-- Eggplant -->
+            <div class="product-card" data-product="potato">
+                <div class="product-image">
+                    <img src="../IMG/potato.jpg" alt="Potato" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI1NSIgcnk9IjY1IiBmaWxsPSIjRDI2OTFCII8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBvdGF0bzwvdGV4dD4KPC9zdmc+'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Eggplant</h3>
+                </div>
+            </div>
+
+            <!-- Tomato -->
+            <div class="product-card" data-product="onion">
+                <div class="product-image">
+                    <img src="../IMG/onion.jpg" alt="Onion" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iNjAiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0RERCIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk9uaW9uPC90ZXh0Pgo8L3N2Zz4='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Tomato</h3>
+                </div>
+            </div>
+
+            <!-- Upo -->
+            <div class="product-card" data-product="carrot">
+                <div class="product-image">
+                    <img src="../IMG/carrot.jpg" alt="Carrot" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxyZWN0IHg9Ijc1IiB5PSI2MCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjEwMCIgcng9IjI1IiBmaWxsPSIjRkY5ODAwIi8+CjxyZWN0IHg9Ijg1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjNENBRjUwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNhcnJvdDwvdGV4dD4KPC9zdmc+'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Upo</h3>
+                </div>
+            </div>
+
+            <!-- okra -->
+            <div class="product-card" data-product="cabbage">
+                <div class="product-image">
+                    <img src="../IMG/cabbage.jpg" alt="Cabbage" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iNjAiIGZpbGw9IiM0Q0FGNTAII8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNhYmJhZ2U8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Okra</h3>
+                </div>
+            </div>
+
+            <!--radish -->
+            <div class="product-card" data-product="eggplant">
+                <div class="product-image">
+                    <img src="../IMG/eggplant.jpg" alt="Eggplant" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI0MCIgcnk9IjcwIiBmaWxsPSIjNjYzM0NDIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkVnZ3BsYW50PC90ZXh0Pgo8L3N2Zz4='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Radish</h3>
+                </div>
+            </div>
+
+            <!-- cabbage -->
+            <div class="product-card" data-product="lettuce">
+                <div class="product-image">
+                    <img src="../IMG/lettuce.jpg" alt="Lettuce" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iNjAiIGZpbGw9IiM5MEVFOTAiLz4KPHRleHQgeD0iMTAwIiB5PSIxODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TGV0dHVjZTwvdGV4dD4KPC9zdmc+'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Cabbage (scorpio)</h3>
+                </div>
+            </div>
+
+            <!-- carrots -->
+            <div class="product-card" data-product="bell-pepper">
+                <div class="product-image">
+                    <img src="../IMG/bell-pepper.jpg" alt="Bell Pepper" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxyZWN0IHg9IjcwIiB5PSI2MCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjgwIiByeD0iMzAiIGZpbGw9IiNGRkQ3MDAiLz4KPHJlY3QgeD0iOTAiIHk9IjQwIiB3aWR0aD0iMjAiIGhlaWdodD0iMzAiIGZpbGw9IiM0Q0FGNTAII8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJlbGwgUGVwcGVyPC90ZXh0Pgo8L3N2Zz4='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Carrots</h3>
+                </div>
+            </div>
+
+            <!-- habitchuelas -->
+            <div class="product-card" data-product="cucumber">
+                <div class="product-image">
+                    <img src="../IMG/cucumber.jpg" alt="Cucumber" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxyZWN0IHg9IjYwIiB5PSI3MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiM2OEEzMjgiLz4KPHRleHQgeD0iMTAwIiB5PSIxODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q3VjdW1iZXI8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Habitchuelas (baguio beans)</h3>
+                </div>
+            </div>
+
+            <!-- Pechay baguio -->
+            <div class="product-card" data-product="cucumber">
+                <div class="product-image">
+                    <img src="../IMG/cucumber.jpg" alt="Cucumber" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxyZWN0IHg9IjYwIiB5PSI3MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiM2OEEzMjgiLz4KPHRleHQgeD0iMTAwIiB5PSIxODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q3VjdW1iZXI8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Pechay (baguio)</h3>
+                </div>
+            </div>
+
+            <!-- Chayote -->
+            <div class="product-card" data-product="cucumber">
+                <div class="product-image">
+                    <img src="../IMG/cucumber.jpg" alt="Cucumber" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxyZWN0IHg9IjYwIiB5PSI3MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiM2OEEzMjgiLz4KPHRleHQgeD0iMTAwIiB5PSIxODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q3VjdW1iZXI8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Chayote</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-container">
+            <div class="pagination">
+                <button class="pagination-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <span class="page-indicator">
+                    <span class="current-page">1</span>
+                    <span class="page-separator">/</span>
+                    <span class="total-pages">2</span>
+                </span>
+                <button class="pagination-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Price Modal -->
+    <div class="modal-overlay" id="priceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title-container">
+                    <img class="modal-product-image" id="modalProductImage" src="" alt="">
+                    <h2 class="modal-title" id="modalTitle">Vegetable Prices</h2>
+                </div>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="price-comparison-table">
+                    <div class="table-header">
+                        <h3>Compare Prices Across Stores</h3>
+                        <p class="last-updated">Last updated: <span id="lastUpdated">Today, 2:30 PM</span></p>
+                    </div>
+                    
+                    <div class="price-cards-container" id="priceCardsContainer">
+                        <!-- Price cards will be dynamically inserted here -->
+                    </div>
+                    
+                    <div class="price-summary">
+                        <div class="best-deal">
+                            <i class="fas fa-trophy"></i>
+                            <span class="best-deal-text">Best Deal: </span>
+                            <span class="best-deal-store" id="bestDealStore">Public Market</span>
+                            <span class="best-deal-price" id="bestDealPrice">₱65/kg</span>
+                        </div>
+                        <div class="price-range">
+                            <i class="fas fa-chart-line"></i>
+                            <span class="price-range-text">Price Range: </span>
+                            <span class="price-range-values" id="priceRange">₱65 - ₱89 per kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add Public Market Price button to all product cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                const productInfo = card.querySelector('.product-info');
+                const productName = card.querySelector('.product-name').textContent;
+                
+                // Check if button already exists
+                if (!productInfo.querySelector('.btn-market-price')) {
+                    const button = document.createElement('button');
+                    button.className = 'btn-market-price';
+                    button.setAttribute('data-product-name', productName);
+                    button.innerHTML = '<i class="fas fa-store"></i> Public Market Price';
+                    productInfo.appendChild(button);
+                }
+            });
+
+            // Handle modal functionality
+            const modal = document.getElementById('priceModal');
+            const closeBtn = document.querySelector('.price-modal-close');
+            const modalProductName = document.getElementById('modalProductName');
+
+            // Open modal when clicking market price buttons
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.btn-market-price')) {
+                    const button = e.target.closest('.btn-market-price');
+                    const productName = button.getAttribute('data-product-name');
+                    modalProductName.textContent = productName + ' - Public Market Prices';
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+
+            // Close modal
+            if (closeBtn) {
+                closeBtn.onclick = function() {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+    </script>
+
+    <script src="../JS/vegetables.js"></script>
+    <script src="../JS/notification-sync.js"></script>
+</body>
+</html>

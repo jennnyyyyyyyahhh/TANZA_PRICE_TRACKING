@@ -1,0 +1,150 @@
+.modal {
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f7f7;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  text-transform: capitalize;
+}
+
+.modal-close {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-close:hover {
+  background: #218838;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.compare-title {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+}
+
+.update-time {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.price-category {
+  margin-bottom: 25px;
+}
+
+.price-category h3 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.price-range {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 10px;
+}
+
+.price-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: #fafafa;
+  transition: transform 0.2s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-3px);
+}
+
+.price-card p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.best-deal {
+  background: #e9f8ec;
+  border: 1px solid #28a745;
+}
+
+.best-deal .price-value {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.best-deal .fa-trophy {
+  color: #28a745;
+  margin-right: 5px;
+}
+
+.modal-footer {
+  border-top: 1px solid #ddd;
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+  background: #f7f7f7;
+}
+
+.footer-btn {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.footer-btn:hover {
+  background: #218838;
+}

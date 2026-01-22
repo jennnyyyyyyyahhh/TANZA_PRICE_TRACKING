@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices & Announcements - Tanza Public Market</title>
+    <link rel="stylesheet" href="../CSS/minimalist-responsive.css">
+    <link rel="stylesheet" href="../CSS/admin-dashboard.css">
+    <link rel="stylesheet" href="../CSS/admin-dashboard-responsive.css">
+    <link rel="stylesheet" href="../CSS/notification-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../JS/disable-console-logs.js"></script>
+    <script src="../JS/disable-all-notifications.js"></script>
+    <script src="../JS/disable-login-requirements.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <div class="logo">
+                    <a href="pricefront.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-seedling"></i>
+                        <span class="logo-text">Tanza Public Market</span>
+                    </a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="landingtrial.html" class="nav-link">HOME</a></li>
+                    <li class="nav-item"><a href="landingtrial.html#weather" class="nav-link">WEATHER</a></li>
+                    <li class="nav-item"><a href="landingtrial.html#about" class="nav-link">ABOUT</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">5</span>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Market Price Alerts</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Fresh Tomatoes</strong></p>
+                                    <small>Now ₱65/kg (was ₱85/kg)</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-account-container" id="headerAccountContainer">
+                        <a href="#profile" class="btn-user-account" id="adminAccountBtn">
+                            <i class="fas fa-user-shield"></i>
+                            <span id="headerUserName">Admin</span>
+                        </a>
+                        <div class="account-dropdown" id="accountDropdown">
+                            <div class="account-dropdown-header">
+                                <div class="account-avatar"><i class="fas fa-user-shield"></i></div>
+                                <div class="account-user-info">
+                                    <h3>Admin User</h3>
+                                    <p>admin@farmfreshmarket.com</p>
+                                    <span class="user-type">Administrator</span>
+                                </div>
+                            </div>
+                            <div class="account-menu">
+                                <a href="#" class="account-menu-item" data-action="profile"><i class="fas fa-user-shield"></i><span>ADMIN PROFILE</span></a>
+                                <a href="#" class="account-menu-item" data-action="settings"><i class="fas fa-cog"></i><span>SYSTEM SETTINGS</span></a>
+                                <a href="#" class="account-menu-item logout" data-action="logout"><i class="fas fa-sign-out-alt"></i><span>LOGOUT</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle sidebar menu">
+        <i class="fas fa-bars"></i>
+        <span>Menu</span>
+    </button>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Admin Panel</span>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                                <ul class="nav-list">
+                    <li class="nav-item"><a href="admin-dashboard.html" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>DASHBOARD</span></a></li>
+                    <li class="nav-item"><a href="admin-vendor-management.html" class="nav-link"><i class="fas fa-users"></i><span>VENDOR MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-survey-form.html" class="nav-link"><i class="fas fa-clipboard-list"></i><span>SUBMIT SURVEY FORM</span></a></li>
+                    <li class="nav-item"><a href="admin-report-management.html" class="nav-link"><i class="fas fa-exclamation-triangle"></i><span>REPORT MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-cleaning-management.html" class="nav-link"><i class="fas fa-broom"></i><span>CLEANING MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-vendor-requests.html" class="nav-link"><i class="fas fa-file-alt"></i><span>VENDOR REQUESTS</span></a></li>
+                    <li class="nav-item"><a href="admin-stall-management.html" class="nav-link"><i class="fas fa-store"></i><span>STALL MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-business-permit.html" class="nav-link"><i class="fas fa-certificate"></i><span>BUSINESS PERMIT</span></a></li>
+                    <li class="nav-item"><a href="admin-events.html" class="nav-link"><i class="fas fa-calendar-alt"></i><span>EVENTS</span></a></li>
+                    <li class="nav-item"><a href="admin-notices.html" class="nav-link"><i class="fas fa-bullhorn"></i><span>NOTICES</span></a></li>
+                    <li class="nav-item"><a href="admin-notification-management.html" class="nav-link"><i class="fas fa-bell"></i><span>NOTIFICATION MANAGEMENT</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>LOG OUT</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-navbar">
+                <div class="top-nav-left">
+                    <button class="mobile-sidebar-trigger" id="mobileSidebarTrigger" aria-label="Open sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Notices & Announcements</h1>
+                </div>
+                <div class="date-time">
+                    <span id="currentDate">October 23, 2025</span>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <section class="content-section active" id="notices-section">
+                    <div class="section-header">
+                        <h2>Notices & Announcements</h2>
+                        <p>Manage important notices and announcements for vendors and customers.</p>
+                    </div>
+                    <div class="section-content">
+                        <div class="notice-management-controls">
+                            <div class="filter-options">
+                                <select id="noticeTypeFilter">
+                                    <option value="all">All Types</option>
+                                    <option value="general">General</option>
+                                    <option value="urgent">Urgent</option>
+                                    <option value="maintenance">Maintenance</option>
+                                    <option value="policy">Policy Update</option>
+                                </select>
+                                <select id="noticeStatusFilter">
+                                    <option value="all">All Status</option>
+                                    <option value="active">Active</option>
+                                    <option value="archived">Archived</option>
+                                </select>
+                            </div>
+                            <div class="notice-actions-global">
+                                <button class="btn-sm btn-primary"><i class="fas fa-plus"></i> Add New Notice</button>
+                                <button class="btn-sm btn-secondary"><i class="fas fa-file-export"></i> Export List</button>
+                            </div>
+                        </div>
+
+                        <div class="notices-list">
+                            <div class="notice-item">
+                                <div class="notice-icon urgent">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div class="notice-details">
+                                    <div class="notice-header">
+                                        <h4>Market Cleaning Day</h4>
+                                        <span class="notice-badge urgent">Urgent</span>
+                                    </div>
+                                    <p>General cleaning on September 25. Please secure your goods by 8 PM on Sept 24.</p>
+                                    <div class="notice-meta">
+                                        <span><i class="fas fa-calendar"></i> Posted: Sep 20, 2025</span>
+                                        <span><i class="fas fa-eye"></i> 124 views</span>
+                                    </div>
+                                </div>
+                                <div class="notice-actions">
+                                    <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon" title="Archive"><i class="fas fa-archive"></i></button>
+                                    <button class="btn-icon" title="Delete"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="notice-item">
+                                <div class="notice-icon general">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="notice-details">
+                                    <div class="notice-header">
+                                        <h4>Harvest Festival Planning</h4>
+                                        <span class="notice-badge general">General</span>
+                                    </div>
+                                    <p>Vendors meeting on Sept 28 at 4 PM to discuss the upcoming Harvest Festival.</p>
+                                    <div class="notice-meta">
+                                        <span><i class="fas fa-calendar"></i> Posted: Sep 18, 2025</span>
+                                        <span><i class="fas fa-eye"></i> 98 views</span>
+                                    </div>
+                                </div>
+                                <div class="notice-actions">
+                                    <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon" title="Archive"><i class="fas fa-archive"></i></button>
+                                    <button class="btn-icon" title="Delete"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="notice-item">
+                                <div class="notice-icon policy">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="notice-details">
+                                    <div class="notice-header">
+                                        <h4>Price Reporting Reminder</h4>
+                                        <span class="notice-badge policy">Policy</span>
+                                    </div>
+                                    <p>All vendors must submit updated price lists by end of day every Monday and Thursday.</p>
+                                    <div class="notice-meta">
+                                        <span><i class="fas fa-calendar"></i> Posted: Sep 15, 2025</span>
+                                        <span><i class="fas fa-eye"></i> 156 views</span>
+                                    </div>
+                                </div>
+                                <div class="notice-actions">
+                                    <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon" title="Archive"><i class="fas fa-archive"></i></button>
+                                    <button class="btn-icon" title="Delete"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="../JS/admin-sidebar.js"></script>
+    <script src="../JS/admin-dashboard.js"></script>
+</body>
+</html>

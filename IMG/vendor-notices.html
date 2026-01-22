@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#4a8c33">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Tanza">
+    <title>Market Notices - Tanza Public Market</title>
+    <link rel="stylesheet" href="../CSS/minimalist-responsive.css">
+    <link rel="stylesheet" href="../CSS/vendor-dashboard.css">
+    <link rel="stylesheet" href="../CSS/survey-form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../JS/disable-console-logs.js"></script>
+    <script src="../JS/disable-all-notifications.js"></script>
+    <script src="../JS/disable-login-requirements.js"></script>
+    <!-- Shared JS for all pages -->
+    <script src="../JS/vendor-dashboard-shared.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Left Side -->
+                <div class="logo">
+                    <a href="pricefront.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-seedling"></i>
+                        <span>Tanza Public Market</span>
+                    </a>
+                </div>
+                
+                <!-- Navigation Center -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="landingtrial.html" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#weather" class="nav-link">WEATHER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#about" class="nav-link">ABOUT</a>
+                    </li>
+                </ul>
+                
+                <!-- Right Side Actions -->
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">5</span>
+                        <!-- Notification Dropdown -->
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Market Price Alerts</h4>
+                                <span class="mark-read" id="markAllRead">Mark all as read</span>
+                            </div>
+                            <div id="cleaningNotifications">
+                                <!-- Cleaning request notifications will be inserted here -->
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Fresh Tomatoes - Tanza Market</strong></p>
+                                    <small>Now ₱65/kg (was ₱85/kg) - Save 24% at Local Farm</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Local Rice - Farmer's Direct</strong></p>
+                                    <small>Now ₱48/kg (was ₱55/kg) - Save 13% from Laguna Farms</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-bell price-alert"></i>
+                                <div class="notification-content">
+                                    <p><strong>Organic Apples - Limited Stock</strong></p>
+                                    <small>₱95/kg - Only 10kg left at Public Market</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Ripe Bananas - Morning Harvest</strong></p>
+                                    <small>Now ₱35/kg (was ₱45/kg) - Fresh from Batangas Farms</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Carrots - Bulk Discount</strong></p>
+                                    <small>Now ₱50/kg (was ₱65/kg) - Highland Vegetables</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- User Account Button -->
+                    <div class="user-account-container" id="headerAccountContainer">
+                        <a href="vendor-edit-profile.html" class="btn-user-account" id="headerAccountBtn">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="headerUserName">Vendor</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="toggle-sidebar" id="toggleSidebar" aria-label="Toggle sidebar menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            
+            <!-- Navigation Links -->
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="vendor-dashboard.php" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>DASHBOARD</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="vendor-business-permit.html" class="nav-link">
+                            <i class="fas fa-certificate"></i>
+                            <span>BUSINESS PERMIT</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="vendor-events.html" class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>EVENTS</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="vendor-notices.html" class="nav-link">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>NOTICES</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="survey-form.html" class="nav-link">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>SUBMIT SURVEY RESPONSE</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cleaning.php" class="nav-link">
+                            <i class="fas fa-broom"></i>
+                            <span>REQUEST CLEANING</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Logout at the bottom -->
+            <div class="sidebar-footer">
+                <a href="#" id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>LOG OUT</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <header class="top-navbar">
+                <div class="date-time">
+                    <span id="currentDate"></span>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-wrapper">
+                    <div class="section-header">
+                        <h2>Market Notices</h2>
+                        <p>Important notices, reports, and complaints.</p>
+                        
+                        <!-- Status Legend -->
+                        <div class="vendor-status-legend">
+                            <div class="legend-item">
+                                <span class="legend-indicator suspended"></span>
+                                <span class="legend-label">Suspended</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-indicator complaint"></span>
+                                <span class="legend-label">Has Complaint</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-content">
+                        <!-- Notice Filters -->
+                        <div class="notice-filters">
+                            <div class="filter-group">
+                                <label for="noticeTypeFilter">Filter by Type:</label>
+                                <select id="noticeTypeFilter">
+                                    <option value="all">All Types</option>
+                                    <option value="complaint">Complaints</option>
+                                    <option value="report">Reports</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="noticeDateFilter">Filter by Date:</label>
+                                <select id="noticeDateFilter">
+                                    <option value="all">All Dates</option>
+                                    <option value="today">Today</option>
+                                    <option value="week">This Week</option>
+                                    <option value="month">This Month</option>
+                                </select>
+                            </div>
+                            <div class="filter-group search">
+                                <input type="text" id="noticeSearchInput" placeholder="Search notices...">
+                                <button class="search-btn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Notices List -->
+                        <div class="notices-container">
+                            <!-- Complaint -->
+                            <div class="notice-item complaint">
+                                <div class="notice-header">
+                                    <span class="notice-badge complaint">Complaint</span>
+                                    <h3 class="notice-title">Customer Complaint: Product Quality</h3>
+                                    <span class="notice-date">September 22, 2025</span>
+                                </div>
+                                <div class="notice-content">
+                                    <p>A customer has reported receiving overripe mangoes from your stall. Please review your quality control process for fresh produce.</p>
+                                    <div class="notice-actions">
+                                        <a href="#respond" class="notice-action">Respond</a>
+                                        <a href="#details" class="notice-action">View Details</a>
+                                        <span class="notice-status read">Read</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Report -->
+                            <div class="notice-item report">
+                                <div class="notice-header">
+                                    <span class="notice-badge report">Report</span>
+                                    <h3 class="notice-title">Monthly Sales Report</h3>
+                                    <span class="notice-date">September 20, 2025</span>
+                                </div>
+                                <div class="notice-content">
+                                    <p>Your monthly sales report for August 2025 is now available. Your sales increased by 12% compared to the previous month.</p>
+                                    <div class="notice-actions">
+                                        <a href="#download" class="notice-action">Download Report</a>
+                                        <span class="notice-status read">Read</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Complaint -->
+                            <div class="notice-item complaint">
+                                <div class="notice-header">
+                                    <span class="notice-badge complaint">Complaint</span>
+                                    <h3 class="notice-title">Neighbor Stall: Noise Complaint</h3>
+                                    <span class="notice-date">September 10, 2025</span>
+                                </div>
+                                <div class="notice-content">
+                                    <p>A neighboring vendor has complained about excessive noise from your sound system during morning hours. Please ensure volume levels comply with market regulations.</p>
+                                    <div class="notice-actions">
+                                        <a href="#respond" class="notice-action">Respond</a>
+                                        <a href="#details" class="notice-action">View Details</a>
+                                        <span class="notice-status read">Read</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Report -->
+                            <div class="notice-item report">
+                                <div class="notice-header">
+                                    <span class="notice-badge report">Report</span>
+                                    <h3 class="notice-title">Inventory Audit Results</h3>
+                                    <span class="notice-date">September 5, 2025</span>
+                                </div>
+                                <div class="notice-content">
+                                    <p>Results from your quarterly inventory audit are now available. There are some discrepancies that require your attention.</p>
+                                    <div class="notice-actions">
+                                        <a href="#download" class="notice-action">View Report</a>
+                                        <span class="notice-status read">Read</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="notices-pagination">
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <span class="pagination-separator">...</span>
+                            <button class="pagination-btn">8</button>
+                            <button class="pagination-btn next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                
+            </div>
+        </main>
+    </div>
+    
+    <!-- *** PAGE SPECIFIC SCRIPTS GO HERE (if any) *** -->
+    <script src="../JS/vendor-dashboard.js"></script>
+    <script src="empty-specific.js"></script>
+    
+</body>
+</html>

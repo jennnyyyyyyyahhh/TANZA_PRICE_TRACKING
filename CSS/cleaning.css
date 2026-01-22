@@ -1,0 +1,305 @@
+/* Cleaning Page Styles - Optimized */
+:root {
+    --cleaning-card-padding: 1.25rem;
+    --cleaning-form-padding: 1rem;
+    --cleaning-input-height: 2.75rem;
+}
+
+/* Container & Sections */
+.cleaning-status-section {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin: 0 -0.5rem 1.5rem;
+    width: calc(100% + 1rem);
+}
+
+.section-header {
+    padding: 0 0.5rem;
+
+    h2 {
+        margin: 0 0 0.5rem;
+        color: var(--text-primary);
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    p {
+        margin: 0 0 1rem;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+/* Cleaning request cards grid */
+#cleaningRequestsStatus {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+}
+
+.cleaning-request-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+    .card-body {
+        padding: var(--cleaning-card-padding);
+    }
+
+    h6 {
+        font-size: 1rem;
+        margin: 0 0 0.5rem;
+        color: var(--text-primary);
+        display: flex;
+        align-items: center;
+    }
+
+    .badge {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.65rem;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    ul.list-unstyled {
+        margin: 1rem 0;
+        padding: 0;
+
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.4;
+
+            i {
+                margin: 0.2rem 0.5rem 0 0;
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    .btn-group .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Status pills - using utility classes from global-standards.css instead */
+.bg-danger { background-color: #dc3545 !important; }
+
+/* Modal Styles */
+#cleaningModal {
+    .modal-dialog {
+        margin: 0.5rem;
+        max-width: 100%;
+    }
+
+    .modal-content {
+        border: none;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+    }
+
+    .modal-header {
+        padding: 1.25rem;
+        border-bottom: 1px solid var(--light-gray);
+        background: var(--bg-secondary);
+    }
+
+    .modal-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    .btn-close {
+        opacity: 0.8;
+        background: none;
+        font-size: 1.5rem;
+        line-height: 1;
+        padding: 0.5rem;
+    }
+
+    .form-label {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+    }
+
+    .form-control,
+    .form-select {
+        height: var(--cleaning-input-height);
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--gray);
+        transition: all var(--transition-normal);
+        
+        &:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.15);
+        }
+    }
+
+    textarea.form-control {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    .modal-footer {
+        padding: 1.25rem;
+        background: var(--bg-secondary);
+        border-top: 1px solid var(--light-gray);
+    }
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--light-gray);
+}
+
+/* Responsive Adjustments */
+@media (min-width: 576px) {
+    .cleaning-status-section {
+        padding: 1.5rem;
+        margin: 0 0 1.5rem;
+        width: 100%;
+        border-radius: var(--radius-lg);
+    }
+    
+    #cleaningRequestsStatus {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        padding: 0;
+    }
+    
+    #cleaningModal .modal-dialog {
+        max-width: 500px;
+        margin: 1.75rem auto;
+    }
+}
+
+/* Large screens */
+@media (min-width: 992px) {
+    #cleaningModal {
+        .modal-dialog {
+            max-width: 600px;
+        }
+        
+        .modal-lg {
+            max-width: 800px;
+        }
+    }
+}
+.btn-primary {
+    background: var(--primary-green, #4CAF50);
+    color: var(--white);
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-pill, 25px);
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-pill, 25px);
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+/* Small helpers used in markup */
+.py-10 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.text-3xl { font-size: 1.75rem; }
+.font-bold { font-weight: 700; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-3 { gap: 0.75rem; }
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .cleaning-status-section {
+        padding: 1rem;
+    }
+    
+    .cleaning-form-section {
+        padding: 1rem;
+    }
+    
+    .cleaning-form-section h3 {
+        font-size: 1rem;
+    }
+    
+    .cleaning-request-form .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.4rem;
+    }
+    
+    .py-10 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .cleaning-request-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .cleaning-request-card .p-5 {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 640px) {
+    .cleaning-requests-status { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .cleaning-form-section {
+        padding: 1.1rem;
+    }
+    
+    .cleaning-request-form input,
+    .cleaning-request-form select,
+    .cleaning-request-form textarea {
+        font-size: 16px; /* Prevents iOS zoom */
+    }
+}
+
+@media (min-width: 1024px) {
+    .cleaning-requests-status { grid-template-columns: repeat(4, 1fr); }
+    .cleaning-request-card .p-5 { padding: 1.5rem; }
+}
+
+/* Accessibility focus states */
+.cleaning-request-form input:focus,
+.cleaning-request-form select:focus,
+.cleaning-request-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.12);
+    border-color: var(--primary-green);
+}
+
+/* End of cleaning.css */

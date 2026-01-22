@@ -1,0 +1,24 @@
+/* admin-dashboard-inline.css
+   Lightweight overrides for admin-dashboard.php
+   - Imports the base admin dashboard styles
+   - Forces the header to a light green background for this page
+*/
+
+@import url('admin-dashboard.css');
+@import url('admin-dashboard-responsive.css');
+
+/* Light green header override */
+.header {
+    background-color: #1a5c1a !important; /* soft light green */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header .nav-link,
+.header .logo span {
+    color: #1b3b1b !important; /* darker text for contrast */
+}
+
+/* Ensure the account icon aligns with the new header color */
+.user-account-container .fas.fa-user-shield {
+    color: #1b3b1b !important;
+}

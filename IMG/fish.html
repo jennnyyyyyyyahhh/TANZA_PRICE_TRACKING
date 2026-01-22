@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish & Seafood - Tanza Public Market</title>
+    <link rel="stylesheet" href="../CSS/fish.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Left Side -->
+                <div class="logo">
+                    <a href="pricefront.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-seedling"></i>
+                        <span>Tanza Public Market</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Hamburger Menu -->
+                <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Navigation Center -->
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="landingtrial.html" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#weather" class="nav-link">WEATHER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="landingtrial.html#about" class="nav-link">ABOUT</a>
+                    </li>
+                </ul>
+                
+                <!-- Right Side Actions -->
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">3</span>
+                        <!-- Notification Dropdown -->
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Market Price Alerts</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Fresh Tomatoes - Tanza Market</strong></p>
+                                    <small>Now ₱65/kg (was ₱85/kg) - Save 24% at Maria's Farm</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Local Rice - Farmer's Direct</strong></p>
+                                    <small>Now ₱48/kg (was ₱55/kg) - Save 13% from Laguna Farms</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-bell price-alert"></i>
+                                <div class="notification-content">
+                                    <p><strong>Organic Apples - Limited Stock</strong></p>
+                                    <small>₱95/kg - Only 10kg left at Public Market</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Ripe Bananas - Morning Harvest</strong></p>
+                                    <small>Now ₱35/kg (was ₱45/kg) - Fresh from Batangas Farms</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Carrots - Bulk Discount</strong></p>
+                                    <small>Now ₱50/kg (was ₱65/kg) - Highland Vegetables</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Login/Signup Button -->
+                    <a href="login.html" class="btn-login">LOGIN / SIGNUP</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="search products" id="searchInput">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <!-- Back Button -->
+            <div class="back-button-container">
+                <a href="pricefront.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Title -->
+        <div class="page-header">
+            <h1 class="page-title">Fish & Seafood</h1>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+            <!-- Tilapia -->
+            <div class="product-card" data-product="tilapia">
+                <div class="product-image">
+                    <img src="../IMG/tilapia.jpg" alt="Tilapia" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI3MCIgcnk9IjM1IiBmaWxsPSIjNjY5OUNDIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlRpbGFwaWE8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Tilapia</h3>
+                </div>
+            </div>
+
+            <!-- Bangus -->
+            <div class="product-card" data-product="bangus">
+                <div class="product-image">
+                    <img src="../IMG/bangus.jpg" alt="Bangus" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI3NSIgcnk9IjMwIiBmaWxsPSIjNENCQjE3Ii8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJhbmd1czwvdGV4dD4KPC9zdmc+'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Bangus</h3>
+                </div>
+            </div>
+
+            <!-- Galunggong -->
+            <div class="product-card" data-product="galunggong">
+                <div class="product-image">
+                    <img src="../IMG/galunggong.jpg" alt="Galunggong" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI2NSIgcnk9IjI4IiBmaWxsPSIjMzM4QUQ5Ii8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkdhbHVuZ2dvbmc8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Galunggong (local)</h3>
+                </div>
+            </div>
+
+            <!-- galunggong imported -->
+            <div class="product-card" data-product="galunggong-imported">
+                <div class="product-image">
+                    <img src="../IMG/galunggong2.jpg" alt="Galunggong (imported)" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI3MCIgcnk9IjMwIiBmaWxsPSIjRkY4QTgwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlNhbG1vbjwvdGV4dD4KPC9zdmc+'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Galunggong (imported)</h3>
+                </div>
+            </div>
+
+            <!-- Shrimp -->
+            <div class="product-card" data-product="shrimp">
+                <div class="product-image">
+                    <img src="../IMG/alumahan.jpg" alt="Shrimp" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik02MCA5MEM4MCA5MCA5MCA4MCA5MCA5MEMxMDAgMTAwIDEyMCAxMDAgMTMwIDkwQzE0MCA5MCA5MCA3MCA5MCA5MEw2MCA5MFoiIGZpbGw9IiNGRkE1OTYiLz4KPHRleHQgeD0iMTAwIiB5PSIxNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U2hyaW1wPC90ZXh0Pgo8L3N2Zz4='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Alumahan</h3>
+                </div>
+            </div>
+
+            <!-- Crab -->
+            <div class="product-card" data-product="crab">
+                <div class="product-image">
+                    <img src="../IMG/sapsap.jpg" alt="Crab" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iNDAiIGZpbGw9IiNGRjQ1NDUiLz4KPGxpbmUgeDE9IjcwIiB5MT0iMTAwIiB4Mj0iMTMwIiB5Mj0iMTAwIiBzdHJva2U9IiNEQzM1NDUiIHN0cm9rZS13aWR0aD0iNCIvPgo8dGV4dCB4PSIxMDAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DcmFiPC90ZXh0Pgo8L3N2Zz4='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Sapsap</h3>
+                </div>
+            </div>
+
+            <!-- Squid -->
+            <div class="product-card" data-product="squid">
+                <div class="product-image">
+                    <img src="../IMG/tamban.jpg" alt="Squid" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSI4MCIgcng9IjMwIiByeT0iNDAiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iIzk5OSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI5MCIgeTE9IjEyMCIgeDI9IjkwIiB5Mj0iMTUwIiBzdHJva2U9IiM5OTkiIHN0cm9rZS13aWR0aD0iMyIvPgo8bGluZSB4MT0iMTEwIiB5MT0iMTIwIiB4Mj0iMTEwIiB5Mj0iMTUwIiBzdHJva2U9IiM5OTkiIHN0cm9rZS13aWR0aD0iMyIvPgo8dGV4dCB4PSIxMDAiIHk9IjE4MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5TcXVpZDwvdGV4dD4KPC9zdmc+'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Tamban</h3>
+                </div>
+            </div>
+
+            <!-- Tuna -->
+            <div class="product-card" data-product="tuna">
+                <div class="product-image">
+                    <img src="../IMG/daing.jpg" alt="Tuna" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI3NSIgcnk9IjM1IiBmaWxsPSIjNEE0QTRBIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlR1bmE8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Daing na Galunggong</h3>
+                </div>
+            </div>
+
+            <!-- Labahita -->
+            <div class="product-card" data-product="tuna">
+                <div class="product-image">
+                    <img src="../IMG/labahita.jpg" alt="Labahita" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI3NSIgcnk9IjM1IiBmaWxsPSIjNEE0QTRBIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlR1bmE8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Labahita</h3>
+                </div>
+            </div>
+
+            <!-- Dilis -->
+            <div class="product-card" data-product="tuna">
+                <div class="product-image">
+                    <img src="../IMG/dilis.jpg" alt="Dilis" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI3NSIgcnk9IjM1IiBmaWxsPSIjNEE0QTRBIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlR1bmE8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Dilis</h3>
+                </div>
+            </div>
+
+            <!-- Tuyo tamban -->
+            <div class="product-card" data-product="tuna">
+                <div class="product-image">
+                    <img src="../IMG/tuyo.jpg" alt="tuyo" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI3NSIgcnk9IjM1IiBmaWxsPSIjNEE0QTRBIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlR1bmE8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Tuyo (tamban)</h3>
+                </div>
+            </div>
+
+            <!-- Tuyo salinas -->
+            <div class="product-card" data-product="tuna">
+                <div class="product-image">
+                    <img src="../IMG/tuyosalinas.jpg" alt="Tuna" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDAiIHJ4PSI3NSIgcnk9IjM1IiBmaWxsPSIjNEE0QTRBIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlR1bmE8L3RleHQ+Cjwvc3ZnPg=='">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Tuyo (salinas)</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-container">
+            <div class="pagination">
+                <button class="pagination-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <span class="page-indicator">
+                    <span class="current-page">1</span>
+                    <span class="page-separator">/</span>
+                    <span class="total-pages">1</span>
+                </span>
+                <button class="pagination-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Price Modal -->
+    <div class="modal-overlay" id="priceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title-container">
+                    <img class="modal-product-image" id="modalProductImage" src="" alt="">
+                    <h2 class="modal-title" id="modalTitle">Fish & Seafood Prices</h2>
+                </div>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="price-comparison-table">
+                    <div class="table-header">
+                        <h3>Compare Prices Across Stores</h3>
+                        <p class="last-updated">Last updated: <span id="lastUpdated">Today, 2:30 PM</span></p>
+                    </div>
+                    
+                    <div class="price-cards-container" id="priceCardsContainer">
+                        <!-- Price cards will be dynamically inserted here -->
+                    </div>
+                    
+                    <div class="price-summary">
+                        <div class="best-deal">
+                            <i class="fas fa-trophy"></i>
+                            <span class="best-deal-text">Best Deal: </span>
+                            <span class="best-deal-store" id="bestDealStore">Public Market</span>
+                            <span class="best-deal-price" id="bestDealPrice">₱180/kg</span>
+                        </div>
+                        <div class="price-range">
+                            <i class="fas fa-chart-line"></i>
+                            <span class="price-range-text">Price Range: </span>
+                            <span class="price-range-values" id="priceRange">₱180 - ₱240 per kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn-secondary" id="closeModalBtn">Close</button>
+                <button class="btn-primary" id="viewStoreLocation">View Store Locations</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/fish.js"></script>
+    <script src="../JS/notification-sync.js"></script>
+</body>
+</html>

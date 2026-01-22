@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stall Management - Tanza Public Market</title>
+    <link rel="stylesheet" href="../CSS/minimalist-responsive.css">
+    <link rel="stylesheet" href="../CSS/admin-dashboard.css">
+    <link rel="stylesheet" href="../CSS/admin-dashboard-responsive.css">
+    <link rel="stylesheet" href="../CSS/notification-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../JS/disable-console-logs.js"></script>
+    <script src="../JS/disable-all-notifications.js"></script>
+    <script src="../JS/disable-login-requirements.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <div class="logo">
+                    <a href="pricefront.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-seedling"></i>
+                        <span class="logo-text">Tanza Public Market</span>
+                    </a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="landingtrial.html" class="nav-link">HOME</a></li>
+                    <li class="nav-item"><a href="landingtrial.html#weather" class="nav-link">WEATHER</a></li>
+                    <li class="nav-item"><a href="landingtrial.html#about" class="nav-link">ABOUT</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="notification-container">
+                        <i class="fas fa-bell notification-bell" id="notificationBell"></i>
+                        <span class="notification-badge" id="notificationBadge">5</span>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Market Price Alerts</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-arrow-down price-drop"></i>
+                                <div class="notification-content">
+                                    <p><strong>Fresh Tomatoes</strong></p>
+                                    <small>Now ₱65/kg (was ₱85/kg)</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-account-container" id="headerAccountContainer">
+                        <a href="#profile" class="btn-user-account" id="adminAccountBtn">
+                            <i class="fas fa-user-shield"></i>
+                            <span id="headerUserName">Admin</span>
+                        </a>
+                        <div class="account-dropdown" id="accountDropdown">
+                            <div class="account-dropdown-header">
+                                <div class="account-avatar"><i class="fas fa-user-shield"></i></div>
+                                <div class="account-user-info">
+                                    <h3>Admin User</h3>
+                                    <p>admin@farmfreshmarket.com</p>
+                                    <span class="user-type">Administrator</span>
+                                </div>
+                            </div>
+                            <div class="account-menu">
+                                <a href="#" class="account-menu-item" data-action="profile"><i class="fas fa-user-shield"></i><span>ADMIN PROFILE</span></a>
+                                <a href="#" class="account-menu-item" data-action="settings"><i class="fas fa-cog"></i><span>SYSTEM SETTINGS</span></a>
+                                <a href="#" class="account-menu-item logout" data-action="logout"><i class="fas fa-sign-out-alt"></i><span>LOGOUT</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle sidebar menu">
+        <i class="fas fa-bars"></i>
+        <span>Menu</span>
+    </button>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Admin Panel</span>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                                <ul class="nav-list">
+                    <li class="nav-item"><a href="admin-dashboard.html" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>DASHBOARD</span></a></li>
+                    <li class="nav-item"><a href="admin-vendor-management.html" class="nav-link"><i class="fas fa-users"></i><span>VENDOR MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-survey-form.html" class="nav-link"><i class="fas fa-clipboard-list"></i><span>SUBMIT SURVEY FORM</span></a></li>
+                    <li class="nav-item"><a href="admin-report-management.html" class="nav-link"><i class="fas fa-exclamation-triangle"></i><span>REPORT MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-cleaning-management.html" class="nav-link"><i class="fas fa-broom"></i><span>CLEANING MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-vendor-requests.html" class="nav-link"><i class="fas fa-file-alt"></i><span>VENDOR REQUESTS</span></a></li>
+                    <li class="nav-item"><a href="admin-stall-management.html" class="nav-link"><i class="fas fa-store"></i><span>STALL MANAGEMENT</span></a></li>
+                    <li class="nav-item"><a href="admin-business-permit.html" class="nav-link"><i class="fas fa-certificate"></i><span>BUSINESS PERMIT</span></a></li>
+                    <li class="nav-item"><a href="admin-events.html" class="nav-link"><i class="fas fa-calendar-alt"></i><span>EVENTS</span></a></li>
+                    <li class="nav-item"><a href="admin-notices.html" class="nav-link"><i class="fas fa-bullhorn"></i><span>NOTICES</span></a></li>
+                    <li class="nav-item"><a href="admin-notification-management.html" class="nav-link"><i class="fas fa-bell"></i><span>NOTIFICATION MANAGEMENT</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>LOG OUT</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-navbar">
+                <div class="top-nav-left">
+                    <button class="mobile-sidebar-trigger" id="mobileSidebarTrigger" aria-label="Open sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Stall Management</h1>
+                </div>
+                <div class="date-time">
+                    <span id="currentDate">October 23, 2025</span>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <section class="content-section active" id="stall-management-section">
+                    <div class="section-header">
+                        <h2>Stall Management</h2>
+                        <p>Manage stall assignments, availability and maintenance.</p>
+                    </div>
+                    <div class="section-content">
+                        <div class="stall-management-controls">
+                            <div class="filter-options">
+                                <select id="stallSectionFilter">
+                                    <option value="all">All Sections</option>
+                                    <option value="section-a">Section A</option>
+                                    <option value="section-b">Section B</option>
+                                    <option value="section-c">Section C</option>
+                                    <option value="section-d">Section D</option>
+                                    <option value="section-e">Section E</option>
+                                </select>
+                                <select id="stallStatusFilter">
+                                    <option value="all">All Statuses</option>
+                                    <option value="occupied">Occupied</option>
+                                    <option value="available">Available</option>
+                                    <option value="maintenance">Under Maintenance</option>
+                                    <option value="reserved">Reserved</option>
+                                </select>
+                                <select id="stallCategoryFilter">
+                                    <option value="all">All Categories</option>
+                                    <option value="produce">Produce</option>
+                                    <option value="meat">Meat & Poultry</option>
+                                    <option value="seafood">Seafood</option>
+                                    <option value="dry-goods">Dry Goods</option>
+                                    <option value="food-stalls">Food Stalls</option>
+                                </select>
+                            </div>
+                            <div class="stall-actions-global">
+                                <button class="btn-sm btn-primary"><i class="fas fa-plus"></i> Add New Stall</button>
+                                <button class="btn-sm btn-secondary"><i class="fas fa-file-export"></i> Export List</button>
+                            </div>
+                        </div>
+
+                        <div class="stall-list-container">
+                            <h4>Stall Directory</h4>
+                            <table class="stall-table">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" id="selectAllStalls"></th>
+                                        <th>Stall ID</th>
+                                        <th>Section</th>
+                                        <th>Category</th>
+                                        <th>Size (sqm)</th>
+                                        <th>Monthly Fee</th>
+                                        <th>Status</th>
+                                        <th>Owner/Vendor</th>
+                                        <th>Contract Until</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" class="stall-select"></td>
+                                        <td>A-12</td>
+                                        <td>Section A</td>
+                                        <td>Produce</td>
+                                        <td>15</td>
+                                        <td>$450</td>
+                                        <td><span class="status-badge occupied">Occupied</span></td>
+                                        <td>Maria Santos</td>
+                                        <td>Dec 31, 2025</td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon" title="Manage Contract"><i class="fas fa-file-contract"></i></button>
+                                            <button class="btn-icon status-action" title="Mark as Available"><i class="fas fa-store-slash"></i></button>
+                                            <button class="btn-icon status-action" title="Mark Under Maintenance"><i class="fas fa-tools"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="stall-select"></td>
+                                        <td>B-05</td>
+                                        <td>Section B</td>
+                                        <td>Meat & Poultry</td>
+                                        <td>20</td>
+                                        <td>$600</td>
+                                        <td><span class="status-badge occupied">Occupied</span></td>
+                                        <td>John Rodriguez</td>
+                                        <td>Nov 15, 2025</td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon" title="Manage Contract"><i class="fas fa-file-contract"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="stall-select"></td>
+                                        <td>C-08</td>
+                                        <td>Section C</td>
+                                        <td>Seafood</td>
+                                        <td>18</td>
+                                        <td>$550</td>
+                                        <td><span class="status-badge occupied">Occupied</span></td>
+                                        <td>Ana Reyes</td>
+                                        <td>Oct 31, 2025</td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon" title="Manage Contract"><i class="fas fa-file-contract"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="stall-select"></td>
+                                        <td>A-05</td>
+                                        <td>Section A</td>
+                                        <td>Produce</td>
+                                        <td>15</td>
+                                        <td>$450</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                        <td>—</td>
+                                        <td>—</td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon primary-action" title="Assign Stall"><i class="fas fa-user-plus"></i></button>
+                                            <button class="btn-icon status-action" title="Mark as Reserved"><i class="fas fa-bookmark"></i></button>
+                                            <button class="btn-icon status-action" title="Mark Under Maintenance"><i class="fas fa-tools"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="stall-select"></td>
+                                        <td>D-03</td>
+                                        <td>Section D</td>
+                                        <td>Dry Goods</td>
+                                        <td>12</td>
+                                        <td>$400</td>
+                                        <td><span class="status-badge occupied">Occupied</span></td>
+                                        <td>Carlos Mendoza</td>
+                                        <td>Feb 28, 2026</td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon" title="Manage Contract"><i class="fas fa-file-contract"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="stall-select"></td>
+                                        <td>E-10</td>
+                                        <td>Section E</td>
+                                        <td>Food Stalls</td>
+                                        <td>25</td>
+                                        <td>$750</td>
+                                        <td><span class="status-badge occupied">Occupied</span></td>
+                                        <td>Luisa Tan</td>
+                                        <td>Jan 15, 2026</td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon" title="Manage Contract"><i class="fas fa-file-contract"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="stall-select"></td>
+                                        <td>B-09</td>
+                                        <td>Section B</td>
+                                        <td>Meat & Poultry</td>
+                                        <td>20</td>
+                                        <td>$600</td>
+                                        <td><span class="status-badge maintenance">Under Maintenance</span></td>
+                                        <td>—</td>
+                                        <td>—</td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon primary-action" title="Maintenance Log"><i class="fas fa-clipboard-list"></i></button>
+                                            <button class="btn-icon status-action" title="Mark as Available"><i class="fas fa-check-circle"></i></button>
+                                            <button class="btn-icon status-action" title="Schedule Repair"><i class="fas fa-hammer"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="stall-select"></td>
+                                        <td>C-03</td>
+                                        <td>Section C</td>
+                                        <td>Seafood</td>
+                                        <td>18</td>
+                                        <td>$550</td>
+                                        <td><span class="status-badge reserved">Reserved</span></td>
+                                        <td>Roberto Martinez (Pending)</td>
+                                        <td>Starts Oct 1, 2025</td>
+                                        <td class="action-buttons">
+                                            <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon primary-action" title="Application Status"><i class="fas fa-clipboard-check"></i></button>
+                                            <button class="btn-icon status-action" title="Confirm Occupancy"><i class="fas fa-user-check"></i></button>
+                                            <button class="btn-icon status-action" title="Cancel Reservation"><i class="fas fa-times-circle"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="stall-details-container" style="display: none;">
+                            <div class="details-header">
+                                <h3>Stall Details <span id="stallIdDisplay">A-12</span></h3>
+                                <button class="btn-icon" id="closeStallDetails" title="Close"><i class="fas fa-times"></i></button>
+                            </div>
+                            <div class="details-content">
+                                <!-- Stall details content will load here -->
+                            </div>
+                        </div>
+
+                        <div class="stall-pagination">
+                            <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <span class="pagination-dots">...</span>
+                            <button class="pagination-btn">12</button>
+                            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+
+                        <div class="stall-bulk-actions">
+                            <select id="bulkStallActionSelect">
+                                <option value="">Bulk Actions</option>
+                                <option value="mark-available">Mark as Available</option>
+                                <option value="mark-maintenance">Mark Under Maintenance</option>
+                                <option value="export-selected">Export Selected</option>
+                                <option value="print-selected">Print Selected</option>
+                            </select>
+                            <button class="btn-sm btn-secondary" id="applyBulkStallAction">Apply</button>
+                        </div>
+
+                        <div class="stall-summary">
+                            <div class="summary-item">
+                                <span class="summary-label">Total Stalls:</span>
+                                <span class="summary-value">150</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Occupied:</span>
+                                <span class="summary-value">142</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Available:</span>
+                                <span class="summary-value">5</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Under Maintenance:</span>
+                                <span class="summary-value">2</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Reserved:</span>
+                                <span class="summary-value">1</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Occupancy Rate:</span>
+                                <span class="summary-value">95%</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="../JS/admin-sidebar.js"></script>
+    <script src="../JS/admin-dashboard.js"></script>
+</body>
+</html>

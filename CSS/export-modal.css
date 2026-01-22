@@ -1,0 +1,97 @@
+/* Export Modal Styles */
+
+#exportModal .modal-content {
+    max-width: 500px;
+}
+
+#exportModal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#exportModal .form-group {
+    margin-bottom: 20px;
+}
+
+#exportModal .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#exportModal .date-range-group {
+    display: flex;
+    gap: 15px;
+}
+
+#exportModal .date-input-wrapper {
+    flex: 1;
+}
+
+#exportModal .date-input-wrapper label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+#exportModal .date-input-wrapper input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+#exportModal .date-input-wrapper input[type="date"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+#exportModal .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#exportModal .checkbox-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#exportModal .file-format-group {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+#exportModal .file-format-option {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+#exportModal .file-format-option i {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#exportModal .file-format-option.selected, #exportModal .file-format-option:hover {
+    border-color: #4CAF50;
+    background-color: #f0fff0;
+    color: #4CAF50;
+}
+
+#exportModal .file-format-option .fa-file-pdf { color: #D9534F; }
+#exportModal .file-format-option .fa-file-excel { color: #5CB85C; }
+#exportModal .file-format-option .fa-file-csv { color: #5BC0DE; }
+
+#exportModal .modal-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+}

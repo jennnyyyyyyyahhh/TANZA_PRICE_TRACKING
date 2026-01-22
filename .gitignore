@@ -1,0 +1,41 @@
+# Composer dependencies
+/vendor/
+composer.lock
+
+# Uploaded files
+/uploads/*
+/php/uploads/*
+!/uploads/.gitkeep
+!/php/uploads/.gitkeep
+
+# Environment files
+.env
+.env.local
+
+# IDE files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-*
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+
+# Build files
+/node_modules/
+/dist/
+/build/
+
+# JSON state files
+read_state_*.json
