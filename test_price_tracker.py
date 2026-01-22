@@ -2,6 +2,7 @@
 Unit tests for the Tanza Price Tracking System.
 """
 import os
+import tempfile
 import pytest
 from datetime import datetime, timedelta
 from database import Database
@@ -11,7 +12,8 @@ from models import Product, PriceEntry
 @pytest.fixture
 def test_db():
     """Create a temporary test database."""
-    db_path = "test_tanza.db"
+    fd, db_path = tempfile.mkstemp(suffix=".db")
+    os.close(fd)  # Close the file descriptor
     db = Database(db_path)
     yield db
     db.close()

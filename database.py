@@ -137,10 +137,12 @@ class Database:
             WHERE product_id = ? 
             ORDER BY date DESC
         """
+        params = [product_id]
         if limit:
-            query += f" LIMIT {limit}"
+            query += " LIMIT ?"
+            params.append(limit)
         
-        cursor.execute(query, (product_id,))
+        cursor.execute(query, params)
         
         return [
             PriceEntry(
