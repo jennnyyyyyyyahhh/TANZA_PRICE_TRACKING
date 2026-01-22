@@ -252,7 +252,13 @@ def main():
                 print("Error: price-history requires: <product_name> [limit]")
                 sys.exit(1)
             product_name = sys.argv[2]
-            limit = int(sys.argv[3]) if len(sys.argv) > 3 else 10
+            limit = 10
+            if len(sys.argv) > 3:
+                try:
+                    limit = int(sys.argv[3])
+                except ValueError:
+                    print("Error: Limit must be a valid integer.")
+                    sys.exit(1)
             tracker.show_price_history(product_name, limit)
 
         elif command == "search":

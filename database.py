@@ -3,7 +3,7 @@ Database management for the Tanza Price Tracking System.
 """
 import sqlite3
 from datetime import datetime
-from typing import List, Optional, Tuple
+from typing import List, Optional
 from models import Product, PriceEntry
 
 
